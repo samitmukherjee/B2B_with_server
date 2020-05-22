@@ -34,9 +34,16 @@
         <!-- Main Navigation -->
         <div class="main-nav-section">
             <div class="user-panel">
-                <a href="login.php" class="user-login-btn border-btn">
+                <?php if(isset($_COOKIE['b2b'])): ?>
+                <a class="user-login-btn border-btn" href="./php_form/logout.php">
+                <i class="fa fa-user-o" aria-hidden="true"></i> logout</a>
+                <?php else: ?>
+                <a class="uses-login-btn border-btn" href="login.php">
+                <i class="fa fa-user-o" aria-hidden="true"></i>login</a>
+                <?php endif; ?>
+                <!-- <a href="login.php" class="user-login-btn border-btn">
                     <i class="fa fa-user-o" aria-hidden="true"></i> Log in
-                </a>
+                </a> -->
                 <a href="add-listing.php" class="user-addlisting-btn">
                     <i class="fa fa-plus" aria-hidden="true"></i> Add Listing
                 </a>

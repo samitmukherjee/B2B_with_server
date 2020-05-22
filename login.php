@@ -139,7 +139,7 @@
                                 <h4>Sign in</h4>
                             </div>
                             <div class="form-block">
-                                <form class="form-common">
+                                <form class="form-common" action="./php_form/user_login.php" method="POST">
                                     <div class="form-group">
                                         <label for="userName">Username or Email Address *</label>
                                         <input type="text" class="form-control" id="userName" placeholder="Enter your Username">
@@ -176,6 +176,11 @@
                                 </form>
                                 <div class="signin-others-option-block">
                                     <h5>Not a Member? <a href="signup.php">Sign up</a></h5>
+                                    <span>
+                                    <?php $_GET['x'];
+                                        echo htmlspecialchars($_GET['x']);
+                                    ?>
+                                    </span>
                                     <!-- <p>Connect with your social media network</p>
                                     <div class="social-icon-btn-group-detail">
                                         <a href="javascript:void(0)" class="icon-btn-fb">
