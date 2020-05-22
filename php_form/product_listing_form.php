@@ -20,12 +20,40 @@
         $business_id = 123;
         $business_type = "Aerospace Industry";
 
-        $name       = $_FILES['company_logo']['name'];  
-        $temp_name  = $_FILES['company_logo']['tmp_name'];  
-        if(isset($name) and !empty($name)){
-            $location = '../uploads/';      
-            if(move_uploaded_file($temp_name, $location.$name)){
-                echo 'File uploaded successfully';
+        $company_logo_name       = $_FILES['company_logo']['name'];  
+        $company_logo_temp_name  = $_FILES['company_logo']['tmp_name'];
+        if(isset($company_logo_name) and !empty($company_logo_name)){
+            $location = '../uploads/product_details/company_logo/';      
+            if(move_uploaded_file($company_logo_temp_name, $location.$company_logo_name)){
+                echo 'File uploaded successfully<br>
+                File Name: '.$location.''.$company_logo_name.'<br>';
+                $company_logo = $location.$company_logo_name;
+            }
+        } else {
+            echo 'You should select a file to upload !!';
+        }
+
+        $product_images_name       = $_FILES['product_images']['name'];  
+        $product_images_temp_name  = $_FILES['product_images']['tmp_name'];
+        if(isset($product_images_name) and !empty($product_images_name)){
+            $location = '../uploads/product_details/product_images/';      
+            if(move_uploaded_file($product_images_temp_name, $location.$product_images_name)){
+                echo 'File uploaded successfully<br>
+                File Name: '.$location.''.$product_images_name.'<br>';
+                $product_images = $location.$product_images_name;
+            }
+        } else {
+            echo 'You should select a file to upload !!';
+        }
+
+        $product_brochure_name       = $_FILES['product_brochure']['name'];  
+        $product_brochure_temp_name  = $_FILES['product_brochure']['tmp_name'];
+        if(isset($product_brochure_name) and !empty($product_brochure_name)){
+            $location = '../uploads/product_details/product_brochure/';      
+            if(move_uploaded_file($product_brochure_temp_name, $location.$product_brochure_name)){
+                echo 'File uploaded successfully<br>
+                File Name: '.$location.''.$product_brochure_name.'<br>';
+                $product_brochure = $location.$product_brochure_name;
             }
         } else {
             echo 'You should select a file to upload !!';
