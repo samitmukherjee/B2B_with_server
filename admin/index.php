@@ -1,3 +1,16 @@
+<?php
+session_start();
+if(empty($_SESSION['user']) && $_SESSION['user_type'] != 'admin'){
+	header("location: ./login.php");
+}
+
+include ("php_form/config.php");
+
+$sql = "SELECT * FROM contact_us";
+$result = mysqli_query($conn,$sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,843 +62,222 @@
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body class="menu-collapsed">
-	<div class="apps-header navbar">
-		<div class="apps-logo-block">
-			<a href="index.php">
-				<img src="images/logox.png" alt="img" class="img-responsive">
-				<div class="logo-text-block">
-					<h3 class="logo-text"><strong>Marketplace</strong></h3>
-				</div>
-			</a>
-		</div>
-		<div class="top-menu">
-			<ul class="top-controller-icons pull-left">
-				<li>
-					<a id="showLeftPush" href="javascript:void(0)" class="toggolebtn">
-						<span class="ti-view-grid"></span>
-					</a>
-				</li>
-				<li>
-					<form class="searchbox">
-						<input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
-						<input type="submit" class="searchbox-submit" value="">
-						<span class="searchbox-icon ti-search"></span>
-					</form>
-				</li>
-			</ul>
-			<ul class="nav navbar-nav">
-				<!-- <li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-						<img src="images/misc/lan1.png" alt="img">
-						English
-						<span class="ti-angle-down"></span>
-						<div class="ripple-container"></div>
-					</a>
-					<ul class="dropdown-menu">
-					  <li>
-						<a href="javascript:void(0)">
-							<img src="images/misc/lan4.png" alt="img">
-							UK
-						</a>
-					  </li>
-					   <li>
-						<a href="javascript:void(0)">
-							<img src="images/misc/lan2.png" alt="img">
-							German
-						</a>
-					  </li>
-					   <li>
-						<a href="javascript:void(0)">
-							<img src="images/misc/lan3.png" alt="img">
-							Italy
-						</a>
-					  </li>
-					</ul>
-				</li> -->
-				<li class="dropdown icon-dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-						<i class="fa fa-envelope-o" aria-hidden="true"></i>
-						<span class="badge badge-default warning-two-bg">8</span>
-						<div class="ripple-container"></div>
-					</a>
-					<ul class="dropdown-menu card-dropdown left">
-					  <li><div class="drop-title">You have 4 new messages</div></li>
-					  <li>
-						<div class="card-inner-block">
-							<a href="javascript:void(0)">
-								<div class="user-img">
-									<img src="images/misc/avatar1.jpg" alt="user">
-									<span class="profile-status"></span>
-								</div>
-								<div class="mail-contnet">
-									<h5>Steven Smith</h5>
-									<span class="mail-desc">Congratulation you win th</span>
-									<span class="time">9:30 AM</span> 
-								</div>
-							</a>
-							<a href="javascript:void(0)">
-								<div class="user-img">
-									<img src="images/misc/avatar2.jpg" alt="user" class="img-circle">
-									<span class="profile-status"></span>
-								</div>
-								<div class="mail-contnet">
-									<h5>Robart John</h5>
-									<span class="mail-desc">Hello! sir,we are glade to</span>
-									<span class="time">9:30 AM</span> 
-								</div>
-							</a>
-							<a href="javascript:void(0)">
-								<div class="user-img">
-									<img src="images/misc/avatar2.jpg" alt="user" class="img-circle">
-									<span class="profile-status"></span>
-								</div>
-								<div class="mail-contnet">
-									<h5>Mike Danny</h5>
-									<span class="mail-desc">There is no marcy form th</span>
-									<span class="time">9:30 AM</span> 
-								</div>
-							</a>
-							<a href="javascript:void(0)">
-								<div class="user-img">
-									<img src="images/misc/avatar1.jpg" alt="user">
-									<span class="profile-status"></span>
-								</div>
-								<div class="mail-contnet">
-									<h5>Steven Smith</h5>
-									<span class="mail-desc">Congratulation you win th</span>
-									<span class="time">9:30 AM</span> 
-								</div>
-							</a>
-						</div>
-					  </li>
-					  <li><div class="drop-footer"><a href="mail-inbox.php">Check all mail</a></div></li>
-					</ul>
-				</li>
-				<li class="dropdown icon-dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-						<span class="badge badge-default primary-bg">7</span>
-						<i class="fa fa-bell-o" aria-hidden="true"></i>
-					</a>
-					<ul class="dropdown-menu card-dropdown right">
-					  <li><div class="drop-title">Notification</div></li>
-					  <li>
-						<div class="card-inner-block notification-block">
-							<a href="javascript:void(0)">
-								<i class="notification-icon fa fa-clock-o info-bg"></i>
-								<div class="notification-details">
-									<h5>Events</h5>
-									<span class="mail-desc">Todayes 5 events still Remaning</span>
-									<span class="time">9:30 AM</span>
-								</div>
-								<span class="time"></span>
-							</a>
-							<a href="javascript:void(0)">
-								<i class="notification-icon fa fa-users primary-bg"></i>
-								<div class="notification-details">
-									<h5>Meetings</h5>
-									<span class="mail-desc">Todayes Meeting were cancle</span>
-									<span class="time">10:30 AM</span>
-								</div>
-								<span class="time"></span>
-							</a>
-							<a href="javascript:void(0)">
-								<i class="notification-icon fa fa-plane warning-two-bg"></i>
-								<div class="notification-details">
-									<h5>Travel</h5>
-									<span class="mail-desc">US Airline Departure time</span>
-									<span class="time">5:30 PM</span>
-								</div>
-								<span class="time"></span>
-							</a>
-							<a href="javascript:void(0)">
-								<i class="notification-icon fa fa-pie-chart warning-bg"></i>
-								<div class="notification-details">
-									<h5>Revenue</h5>
-									<span class="mail-desc">Todayes Revenue Cross 2 crore</span>
-									<span class="time">11:20 PM</span>
-								</div>
-								<span class="time"></span>
-							</a>
-						</div>
-					  </li>
-					  <li><div class="drop-footer"><a href="mail-inbox.php">Check all notification</a></div></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-		<div class="clearfix"></div>
-	</div><!-- apps-header -->
-	<div class="slide-menu-wrap">
-		<nav id="cbp-spmenu-s1" class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
-			<div class="user-profile-block">
-				<div>
-					<div class="user-thumb">
-						<img src="images/profile/user-thumb.jpg" alt="img" class="img-responsive">
-					</div>
-					<div class="user-info">
-						<h5>
-							Robert Smith
-						</h5>
-						<span>UI Designer</span>
-					</div>
-				</div>
-				<a href="javascript:void(0)" class="btn btn-raised btn-primary waves-effect waves-light">Update Profile</a>
-			</div>
-			<div class="accordion-menu responsive-menu" data-accordion-group>
-				<div class="slide-navigation-wrap" data-accordion>
-					<div class="nav-item has-sub" data-control>
-						<a href="#">
-							<span class="menu-icon-wrap icon ti-home"></span>
-							<span class="menu-title">Dashboard</span>
-						</a>
-					</div>
-					<div class="menu-content" data-content>
-						<div class="nav-item">
-							<a href="index.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Dashboard 1</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="index.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Dashboard 2</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="index.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Dashboard 3</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="slide-navigation-wrap" data-accordion>
-					<div class="nav-item has-sub" data-control>
-						<a href="javascript:void(0)">
-							<span class="menu-icon-wrap icon ti-direction"></span>
-							<span class="menu-title">UI Elements</span>
-						</a>
-					</div>
-					<div class="menu-content" data-content>
-						<div class="nav-item">
-							<a href="buttons.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Buttons</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="accordian.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Accordions</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="progress.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Progress bar</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="alerts.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Alerts</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="tab.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Tab</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="slide-navigation-wrap" data-accordion>
-					<div class="nav-item has-sub" data-control>
-						<a href="javascript:void(0)">
-							<span class="menu-icon-wrap icon ti-pencil-alt"></span>
-							<span class="menu-title">Forms</span>
-						</a>
-					</div>
-					<div class="menu-content" data-content>
-						<div class="nav-item">
-							<a href="form-elements.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Form Elements</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="form-validation.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Form Validation</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="input-mask.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Input Mask</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="form-wizard.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Form Wizard </span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="file-upload.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">File Upload</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="slide-navigation-wrap" data-accordion>
-					<div class="nav-item has-sub" data-control>
-						<a href="javascript:void(0)">
-							<span class="menu-icon-wrap icon ti-layout"></span>
-							<span class="menu-title">Tables</span>
-						</a>
-					</div>
-					<div class="menu-content" data-content>
-						<div class="nav-item">
-							<a href="basic-table.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Basic Table</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="data-table.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Data Table</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="slide-navigation-wrap" data-accordion>
-					<div class="nav-item has-sub" data-control>
-						<a href="javascript:void(0)">
-							<span class="menu-icon-wrap icon ti-pie-chart"></span>
-							<span class="menu-title">Charts</span>
-						</a>
-						<div class="menu-badge-wrap">
-							<span class="menu-badge">5</span>
-						</div>
-					</div>
-					<div class="menu-content" data-content>
-						<div class="nav-item">
-							<a href="chart.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Chart</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="slide-navigation-wrap" data-accordion>
-					<div class="nav-item has-sub" data-control>
-						<a href="javascript:void(0)">
-							<span class="menu-icon-wrap icon ti-map-alt"></span>
-							<span class="menu-title">Maps</span>
-						</a>
-					</div>
-					<div class="menu-content" data-content>
-						<div class="nav-item">
-							<a href="vector-map.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Vector Map</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="google-map.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Google Map</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="slide-navigation-wrap" data-accordion>
-					<div class="nav-item has-sub" data-control>
-						<a href="javascript:void(0)">
-							<span class="menu-icon-wrap icon ti-email"></span>
-							<span class="menu-title">Mail Box</span>
-						</a>
-					</div>
-					<div class="menu-content" data-content>
-						<div class="nav-item">
-							<a href="mail-inbox.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Mail Inbox</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="mail-view.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Mail View</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="mail-compose.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Mail Compose</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="slide-navigation-wrap" data-accordion>
-					<div class="nav-item has-sub" data-control>
-						<a href="javascript:void(0)">
-							<span class="menu-icon-wrap icon ti-wheelchair"></span>
-							<span class="menu-title">Icon</span>
-						</a>
-					</div>
-					<div class="menu-content" data-content>
-						<div class="nav-item">
-							<a href="buttons.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Buttons</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="alerts.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Alerts</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="slide-navigation-wrap" data-accordion>
-					<div class="nav-item has-sub" data-control>
-						<a href="javascript:void(0)">
-							<span class="menu-icon-wrap icon ti-server"></span>
-							<span class="menu-title">Widgets</span>
-						</a>
-					</div>
-					<div class="menu-content" data-content>
-						<div class="nav-item">
-							<a href="tree-view.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Tree View</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="profile.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Profile</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="tab.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Tab</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="slide-navigation-wrap" data-accordion>
-					<div class="nav-item has-sub" data-control>
-						<a href="javascript:void(0)">
-							<span class="menu-icon-wrap icon ti-package"></span>
-							<span class="menu-title">Pages</span>
-						</a>
-					</div>
-					<div class="menu-content" data-content>
-						<div class="nav-item">
-							<a href="signup.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Sign Up</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="login.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Login</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="forget-password.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Password Recovery</span>
-							</a>
-						</div>
-						<div class="nav-item">
-							<a href="lock-screen.php">
-								<span class="menu-icon-wrap bullet"></span>
-								<span class="menu-title">Lock Screen</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</nav>
-	</div>
+	
+	<?php 
+	
+	$query_user_count = "SELECT user_id FROM user_details";
+	$result_user_count = mysqli_query($conn, $query_user_count);
+	$row_user_count = mysqli_num_rows($result_user_count);
+
+	$query_business_count = "SELECT business_id FROM business_details";
+	$result_business_count = mysqli_query($conn, $query_business_count);
+	$row_business_count = mysqli_num_rows($result_business_count);
+
+	$query_executive_count = "SELECT executive_id FROM business_executive";
+	$result_executive_count = mysqli_query($conn, $query_executive_count);
+	$row_executive_count = mysqli_num_rows($result_executive_count);
+
+	$query_enquiry_count = "SELECT enquiry_id FROM enquiry_details";
+	$result_enquiry_count = mysqli_query($conn, $query_enquiry_count);
+	$row_enquiry_count = mysqli_num_rows($result_enquiry_count);
+
+	$query_unit_count = "SELECT unit_id FROM unit_table";
+	$result_unit_count = mysqli_query($conn, $query_unit_count);
+	$row_unit_count = mysqli_num_rows($result_unit_count);
+
+	$query_category_count = "SELECT category_id FROM category_table";
+	$result_category_count = mysqli_query($conn, $query_category_count);
+	$row_category_count = mysqli_num_rows($result_category_count);
+
+	$query_subcategory_count = "SELECT subcategory_id FROM subcategory_table";
+	$result_subcategory_count = mysqli_query($conn, $query_subcategory_count);
+	$row_subcategory_count = mysqli_num_rows($result_subcategory_count);
+	
+	$query_review_count = "SELECT review_id FROM review_details";
+	$result_review_count = mysqli_query($conn, $query_review_count);
+	$row_review_count = mysqli_num_rows($result_review_count);
+
+	$query_designation_count = "SELECT designation_id FROM designation_table";
+	$result_designation_count = mysqli_query($conn, $query_designation_count);
+	$row_designation_count = mysqli_num_rows($result_designation_count);
+
+	$query_product_count = "SELECT product_id FROM product_details";
+	$result_product_count = mysqli_query($conn, $query_product_count);
+	$row_product_count = mysqli_num_rows($result_product_count);
+	
+	
+	?>
+
+
 	<div class="apps-container-wrap page-container">
-		<div class="page-content">
+		<div class="page-content" id="">
 			<div class="container-fluid">
 				<div class="dashBoard-section-1 nmbr-statistic-area">
 					<div class="row">
+						
 						<div class="col-lg-3 col-sm-6">
 							<div class="box-widget">
 								<div class="nmbr-statistic-block user-statistic">
 									<div class="nmbr-statistic-info">
-										<span class="number">950</span>
-										<span class="a-meta-title">New User<span class="highlight-text">+12%</span></span>
+										<span class="number"><?php echo $row_user_count ?></span>
+										<span class="a-meta-title">Buyers</span>
 									</div>
-									<span class="nmbr-statistic-icon ti-face-smile"></span>
+									<span class="nmbr-statistic-icon ti-user"></span>
 								</div><!-- nmbr-statistic-block -->
 							</div><!-- widget-module -->
 						</div>
+
 						<div class="col-lg-3 col-sm-6">
 							<div class="box-widget">
 								<div class="nmbr-statistic-block visitors-statistic">
 									<div class="nmbr-statistic-info">
-										<span class="number">3500</span>
-										<span class="a-meta-title">Total visitors<span class="highlight-text">+19%</span></span>
+										<span class="number"><?php echo $row_business_count ?></span>
+										<span class="a-meta-title">Sellers</span>
 									</div>
-									<span class="nmbr-statistic-icon ti-eye"></span>
+									<span class="nmbr-statistic-icon ti-user"></span>
 								</div>
 							</div><!-- widget-module -->
 						</div>
+
 						<div class="col-lg-3 col-sm-6">
 							<div class="box-widget">
 								<div class="nmbr-statistic-block sales-statistic">
 									<div class="nmbr-statistic-info">
-										<span class="number">125</span>
-										<span class="a-meta-title">Total Sales<span class="highlight-text">+60%</span></span>
+										<span class="number"><?php echo $row_executive_count ?></span>
+										<span class="a-meta-title">Executives</span>
 									</div>
-									<span class="nmbr-statistic-icon ti-shopping-cart"></span>
+									<span class="nmbr-statistic-icon ti-user"></span>
 								</div><!-- nmbr-statistic-block -->
 							</div><!-- widget-module -->
 						</div>
+
 						<div class="col-lg-3 col-sm-6">
 							<div class="box-widget">
 								<div class="nmbr-statistic-block Subscribers-statistic">
 									<div class="nmbr-statistic-info">
-										<span class="number">1455</span>
-										<span class="a-meta-title">Subscribers<span class="highlight-text">+29%</span></span>
+										<span class="number"><?php echo $row_product_count ?></span>
+										<span class="a-meta-title">Products</span>
 									</div>
-									<span class="nmbr-statistic-icon ti-announcement"></span>
+									<span class="nmbr-statistic-icon ti-package"></span>
+								</div><!-- nmbr-statistic-block -->
+							</div><!-- widget-module -->
+						</div>
+
+						<div class="col-lg-3 col-sm-6">
+							<div class="box-widget">
+								<div class="nmbr-statistic-block Subscribers-statistic">
+									<div class="nmbr-statistic-info">
+										<span class="number"><?php echo $row_enquiry_count ?></span>
+										<span class="a-meta-title">Enquiries</span>
+									</div>
+									<span class="nmbr-statistic-icon ti-email"></span>
+								</div><!-- nmbr-statistic-block -->
+							</div><!-- widget-module -->
+						</div>
+
+						<div class="col-lg-3 col-sm-6">
+							<div class="box-widget">
+								<div class="nmbr-statistic-block Subscribers-statistic">
+									<div class="nmbr-statistic-info">
+										<span class="number"><?php echo $row_review_count ?></span>
+										<span class="a-meta-title">Reviews</span>
+									</div>
+									<span class="nmbr-statistic-icon ti-comment-alt"></span>
+								</div><!-- nmbr-statistic-block -->
+							</div><!-- widget-module -->
+						</div>
+
+						<div class="col-lg-3 col-sm-6">
+							<div class="box-widget">
+								<div class="nmbr-statistic-block Subscribers-statistic">
+									<div class="nmbr-statistic-info">
+										<span class="number"><?php echo $row_designation_count ?></span>
+										<span class="a-meta-title">Designations</span>
+									</div>
+									<span class="nmbr-statistic-icon ti-medall-alt"></span>
+								</div><!-- nmbr-statistic-block -->
+							</div><!-- widget-module -->
+						</div>
+
+						<div class="col-lg-3 col-sm-6">
+							<div class="box-widget">
+								<div class="nmbr-statistic-block Subscribers-statistic">
+									<div class="nmbr-statistic-info">
+										<span class="number"><?php echo $row_category_count ?></span>
+										<span class="a-meta-title">Categories</span>
+									</div>
+									<span class="nmbr-statistic-icon ti-layers"></span>
+								</div><!-- nmbr-statistic-block -->
+							</div><!-- widget-module -->
+						</div>
+
+						<div class="col-lg-3 col-sm-6">
+							<div class="box-widget">
+								<div class="nmbr-statistic-block Subscribers-statistic">
+									<div class="nmbr-statistic-info">
+										<span class="number"><?php echo $row_subcategory_count ?></span>
+										<span class="a-meta-title">Sub-categories</span>
+									</div>
+									<span class="nmbr-statistic-icon ti-layers-alt"></span>
+								</div><!-- nmbr-statistic-block -->
+							</div><!-- widget-module -->
+						</div>
+
+						<div class="col-lg-3 col-sm-6">
+							<div class="box-widget">
+								<div class="nmbr-statistic-block Subscribers-statistic">
+									<div class="nmbr-statistic-info">
+										<span class="number"><?php echo $row_unit_count ?></span>
+										<span class="a-meta-title">Units</span>
+									</div>
+									<span class="nmbr-statistic-icon ti-tag"></span>
 								</div><!-- nmbr-statistic-block -->
 							</div><!-- widget-module -->
 						</div>
 					</div>
-				</div><!-- nmbr-statistic-area -->
-				<div class="dashBoard-section-2">
-					<div class="row">
-						<div class="col-lg-8">
-							<div class="box-widget widget-module">
-								<div class="widget-body">
-									<div id="canvas-holder1" style="width:100%;">
-										<canvas id="line_chart"></canvas>
-									</div>
-								</div>
-							</div><!-- widget-module -->
-						</div>
-						<div class="col-lg-4">
-							<div class="box-widget widget-module dasboard-doghunt-chart">
-								<div class="widget-body">
-									<div id="canvas-holder" style="width:100%">
-										<canvas id="doghunt_chart_2"></canvas>
-									</div>
-								</div>
-							</div><!-- widget-module -->
-						</div>
-					</div>
-				</div><!-- chart-area -->
-				<div class="dashBoard-section-3">
-					<div class="row">
-						<div class="col-lg-6 col-sm-12">
-							<div class="box-widget">
-								<div id="vectorWorldMap" class="vector-map  dashboard-worldmap"></div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-sm-12">
-							<div class="weather-blcok" id="weather"></div>
-						</div>
-					</div>
 				</div>
-				<div class="dashBoard-section-3">
-					<div class="row">
-						<div class="col-lg-4">
-							<div class="box-widget eql-height">
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<div class="panel-title">
-											<h4>Calender</h4>
-										</div>
-									</div>
-									<div class="panel-body">
-										<div class="eventCallender-block">
-											<div id="eventCalendar"></div>
-										</div><!-- eventCallender-block -->
-									</div><!--panel Body -->
-								</div><!--panel -->
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="box-widget eql-height">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<div class="panel-title">
-										<h4>Chat Box</h4>
-									</div>
-								</div>
-								<div class="panel-body chats-panel-body">
-									<div class="portlet-body" id="chats">
-										<div class="scroller" data-always-visible="1" data-rail-visible1="1">
-											<ul class="chats">
-												<li class="out">
-													<div class="message">
-														<span class="arrow"> </span>
-														<a href="javascript:void(0)" class="name"> Lisa Wong </a>
-														<span class="body">euismod tincidunt ut laoreet dolore magna </span>
-													</div>
-													<div class="avatar-block">
-														<img class="avatar" alt="" src="images/misc/avatar2.jpg"/>
-														<span class="datetime"> 20:11 </span>
-													</div>
-												</li>
-												<li class="out">
-													<div class="message">
-														<span class="arrow"> </span>
-														<a href="javascript:void(0)" class="name"> Lisa Wong </a>
-														<span class="body"> Lorem ipsum dolor sit amet,ut laoreet dolore.</span>
-													</div>
-													<div class="avatar-block">
-														<img class="avatar" alt="" src="images/misc/avatar2.jpg" />
-														<span class="datetime"> 20:11 </span>
-													</div>
-												</li>
-												<li class="in">
-													<div class="avatar-block">
-														<img class="avatar" alt="" src="images/misc/avatar1.jpg" />
-														<span class="datetime">20:30 </span>
-													</div>
-													<div class="message">
-														<span class="arrow"> </span>
-														<a href="javascript:void(0)" class="name"> Bob Nilson </a>
-														<span class="body">Adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</span>
-													</div>
-												</li>
-												<li class="in">
-													<div class="avatar-block">
-														<img class="avatar" alt="" src="images/misc/avatar1.jpg" />
-														<span class="datetime">20:30 </span>
-													</div>
-													<div class="message">
-														<span class="arrow"> </span>
-														<a href="javascript:void(0)" class="name"> Bob Nilson </a>
-														<span class="body">Sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</span>
-													</div>
-												</li>
-												<li class="out">
-													<div class="message">
-														<span class="arrow"> </span>
-														<a href="javascript:void(0)" class="name"> Richard Doe </a>
-														<span class="body"> Lorem laoreet dolore .</span>
-													</div>
-													<div class="avatar-block">
-														<img class="avatar" alt="" src="images/misc/avatar2.jpg" />
-														<span class="datetime">20:33 </span>
-													</div>
-												</li>
-											</ul>
-										</div>
-										<div class="chat-form form-common">
-												<div class="input-cont">
-													<input id ="test" class="form-control" type="text" placeholder="Your Message . . ." data-emojiable="true" data-emoji-input="unicode" /> 
-												</div>
-												<div class="btn-cont">
-													<a href="javascript:void(0)" class="btn btn-primary">
-														Send
-													</a>
-												</div>
-											</div>
-										</div>
-									</div><!--panel Body -->
-								</div><!--panel -->
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="box-widget">
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<div class="panel-title">
-											<h4>Activity</h4>
-										</div>
-									</div>
-									<div class="panel-body activity-panel-body">
-										<div class="activity-block-area">
-											<ul class="activity-list">
-												<li class="primary">
-													<div class="activity-content">
-														<span>10 min ago</span>
-														<p>The point of using Lorem Ipsum</p>
-													</div>
-												</li>
-												<li class="warning">
-													<div class="activity-content">
-														<span>10 min ago</span>
-														<p>The point of using Lorem Ipsum</p>
-													</div>
-												</li>
-												<li class="success">
-													<div class="activity-content">
-														<span>10 min ago</span>
-														<p>The point of using Lorem Ipsum</p>
-													</div>
-												</li>
-												<li class="warning-two">
-													<div class="activity-content">
-														<span>10 min ago</span>
-														<p>The point of using Lorem Ipsum</p>
-													</div>
-												</li>
-												<li class="warning">
-													<div class="activity-content">
-														<span>10 min ago</span>
-														<p>The point of using Lorem Ipsum</p>
-													</div>
-												</li>
-											</ul>
-										</div><!-- Activity-block-area -->
-									</div><!--panel Body -->
-								</div><!--panel -->
-							</div>
-						</div>
-					</div>
-				</div><!-- dashBoard-section-3 -->
-				<div class="dashBoard-section-4">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="box-widget">
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<div class="panel-title">
-											<h4>Responsive table</h4>
-										</div>
-									</div>
-									<div class="panel-body">
-										<div class="responsive-table-block editable-datatable-block">
-											<table id="editable-datatable" class="editable-datatable display table table-bordered dataTable no-footer">
-												<thead>
-													<tr>
-														<th>Select</th>
-														<th>Order ID</th>
-														<th>Full Name</th>
-														<th>Email</th>
-														<th>Place Date</th>
-														<th>Pickup Date</th>
-														<th>Delivery Date</th>
-														<th>Status</th>
-														<th>Price</th>
-														<th>Update</th>
+				<div class="panel-body">
+									<div class="basic-datatable-block table-responsive">
+										<table id="basic_datatable" class="display table table-bordered basic-data-table">
+											<thead>
+												<tr>
+													<th class="view-message">Name</th>
+													<th class="view-message">Email</th>
+													<th class="view-message">Phone number</th>
+													<th class="view-message">Message</th>
+													<th class="view-message">Time</th>
+													<th class="view-message">compose mail</th>
+												</tr>
+											</thead>
+											<tbody>
+
+											<?php
+												if(mysqli_num_rows($result) > 0){
+												while($row = mysqli_fetch_array($result)){
+													?>
+													<tr id="<?php $row["contact_id"] ?>">
+													<td><?php echo $row["guest_name"] . " " . $row["last_name"] ?></td>
+													<td><?php echo $row["guest_email"] ?></td>
+													<td><?php echo $row["guest_phone"] ?></td>
+													<td><?php echo $row["guest_message"] ?></td>
+													<td><?php echo $row["date_time"] . " " . $row["product_unit"] ?></td>
+													<!-- <td style="height:100px; width:100px;"><img src="<?php echo $row["enquiry_attachment"]?>"/></td> -->
+													<!-- <td><?php echo $row["enquiry_message"]?></td> -->
+													<!-- <input type="hidden" id="contact_id" value=<?php $row["contact_id"]?>></input> -->
+											
+													<td><button id=<?php  echo $row["contact_id"] ?> href="#" data-role="contact-guest" data-is=<?php  echo $row["contact_id"] ?>>Reply</button></td>
 													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td></td>
-														<td>679-10-XX</td>
-														<td>Gerald E. Vasquez</td>
-														<td>GeraldEVasquez@worm.us</td>
-														<td>15/02/2016</td>
-														<td>16/02/2016</td>
-														<td>20/03/2016</td>
-														<td>Complete</td>
-														<td>$125</td>
-														<td class="controller-column">
-															<i class="fa fa-pencil edit-icon"></i>
-															<i class="fa fa-trash-o delete-icon"></i>
-														</td>
-													</tr>
-													<tr>
-														<td></td>
-														<td>349-76-XXX</td>
-														<td>Christine R. Hill</td>
-														<td>ChristineRHill@dayrep.com </td>
-														<td>15/02/2016</td>
-														<td>16/02/2016</td>
-														<td>20/03/2016</td>
-														<td>Complete</td>
-														<td>$125</td>
-														<td class="controller-column">
-															<i class="fa fa-pencil edit-icon"></i>
-															<i class="fa fa-trash-o delete-icon"></i>
-														</td>
-													</tr>
-													<tr>
-														<td></td>
-														<td>542-44-XX</td>
-														<td>Barbara B. Maxwell</td>
-														<td>BMaxwell@rhyta.com </td>
-														<td>15/02/2016</td>
-														<td>16/02/2016</td>
-														<td>20/03/2016</td>
-														<td>Complete</td>
-														<td>$125</td>
-														<td class="controller-column">
-															<i class="fa fa-pencil edit-icon"></i>
-															<i class="fa fa-trash-o delete-icon"></i>
-														</td>
-													</tr>
-													<tr>
-														<td></td>
-														<td>295-11-XX</td>
-														<td>Steven A. Good</td>
-														<td>StevenAGood@rhyta.com</td>
-														<td>15/02/2016</td>
-														<td>16/02/2016</td>
-														<td>20/03/2016</td>
-														<td>Complete</td>
-														<td>$125</td>
-														<td class="controller-column">
-															<i class="fa fa-pencil edit-icon"></i>
-															<i class="fa fa-trash-o delete-icon"></i>
-														</td>
-													</tr>
-													<tr>
-														<td></td>
-														<td>181-38-XX</td>
-														<td>William F. Lester</td>
-														<td>FLester@armyspy.com</td>
-														<td>15/02/2016</td>
-														<td>16/02/2016</td>
-														<td>20/03/2016</td>
-														<td>Complete</td>
-														<td>$125</td>
-														<td class="controller-column">
-															<i class="fa fa-pencil edit-icon"></i>
-															<i class="fa fa-trash-o delete-icon"></i>
-														</td>
-													</tr>
-													<tr>
-														<td></td>
-														<td>331-26-XX</td>
-														<td>Elisabeth J. Aquirre</td>
-														<td>isabethJAquirre@dayrep.com</td>
-														<td>15/02/2016</td>
-														<td>16/02/2016</td>
-														<td>20/03/2016</td>
-														<td>Complete</td>
-														<td>$125</td>
-														<td class="controller-column">
-															<i class="fa fa-pencil edit-icon"></i>
-															<i class="fa fa-trash-o delete-icon"></i>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div><!-- responsive-table-block -->
-									</div><!--panel Body -->
-								</div><!--panel -->
-							</div><!-- widget-module -->
-						</div>
-					</div>
-				</div><!-- dashBoard-section-4 -->
-				<div class="col-sm-12">
-					<div class="footer">
-						<p>© 2018 AxilBoard by <a href="#">codepassenger</a></p>
-					</div>
-				</div>
+											<?php		
+												}
+												} else{
+													echo "NO messages";
+												}
+											?>
+												
+											</tbody>
+										</table>
+									</div><!-- basic-table-block -->
+								</div><!--panel Body --><!-- nmbr-statistic-area -->
 			</div>
 		</div><!-- page-content -->
 	</div><!-- page-container -->
@@ -1006,6 +398,16 @@
 			map.write("vectorWorldMap");
 		});
 	</script>
+<script>
+	$(document).on('click','button[data-role=contact-guest]',function(){
+		console.log('contact-guest clicked');
+		var get_guest_id = this.id;
+		console.log(get_guest_id);
+		$('#container_1').load('mail-compose.php',{"get_guest_id":get_guest_id}, function(){
+		});
+	});
+</script>
+
 </body>
 
 <!-- Mirrored from themerail.com/html/listingGeo/admin/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 May 2020 13:45:09 GMT -->

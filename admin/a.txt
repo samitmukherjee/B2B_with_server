@@ -1,0 +1,104 @@
+<thead>
+											<tr>
+												<th class="view-message">Business Name</th>
+												<th class="view-message">Address</th>
+												<th class="view-message">Contact Number</th>
+												<th class="view-message">Email ID</th>
+												<th class="view-message">PAN Number</th>
+												<th class="view-message">GST Number</th>
+												<th class="view-message">Bank Details</th>
+												<th class="view-message">Verification Status</th>
+											</tr>
+										
+									</thead>
+
+									<tbody>
+									
+										<?php
+											if(mysqli_num_rows($result) > 0){
+												while($row = mysqli_fetch_array($result)){
+													?>
+													<tr id="<?php $row['business_id'] ?>"></tr>
+													<!-- $business_id = $row['business_id']; -->
+													<td><?php echo $row['legal_name'] ?></td>
+													<td style="height: fit-content;"><?php echo $row['address_line_1'],'<br>', $row['address_street'],'<br>', $row['address_city']," ", $row['address_state'], " ", $row['postal_zip'],'<br>', $row['country']?></td>
+													<td><?php echo $row['contact_no']?></td>
+													<td><?php echo $row['business_email_id']?></td>
+													<td><?php echo $row['pan_no']?></td>
+													<td><?php echo $row['gst_no']?></td>
+													<input type='hidden' id='business_id' value=<?php $row['business_id']?>></input>
+													<!-- $image_path = $row['bank_details']; -->
+
+													<td style="height:200px; width:200px;">
+														<embed src="./.<?php echo $row['bank_details']?>"/>
+													</td>
+
+													<td><button id=<?php  echo $row['business_id'] ?> href="#" data-role="verify_business" data-is=<?php  echo $row['business_id'] ?> >Verify</button></td>
+												</tr>
+												<?php
+												}
+											}else{
+												echo "No business to verify";
+											}
+											?>
+
+                                    include("php_form/config.php");
+$sql = "SELECT * FROM business_details INNER JOIN business_details_business_address ON business_details.business_id = business_details_business_address.business_id WHERE verification_status = '0' ";
+//echo $sql;
+$result = mysqli_query($conn,$sql)
+
+
+
+
+<script>
+		$(document).ready(function(){
+			var business_count = 0;
+
+			displaycount();
+			function displaycount(){
+				$('#count').load('./php_form/unverified_business_count.php', function(){
+				console.log("count received");
+				});
+			}
+
+			$('#displaydata').click(function(){
+				displaycount();
+				business_count = business_count + 2;
+				$('#response').load('./php_form/load_unverified_business.php', {business_new_count: business_count} ,function(){
+					console.log('data load was successs');
+				});
+			});
+
+
+
+			$(document).on('click','button[data-role=update]',function(){
+				displaycount();
+				var business_id = this.id;
+				//console.log(business_id);
+
+				$.ajax({
+					url: './php_form/verify_business.php',
+					method: 'POST',
+					contentType: 'application/json',
+					data: JSON.stringify({'id': business_id}),
+					success: function(response){
+						console.log(response);
+					}
+				});
+			});
+		});
+
+			// $("#save").click(function(){
+			// var id = $('#business_id').val();
+			// console.log(id);
+			// $.ajax({
+			// 	url: './php_form/verify_business.php',
+			// 	method: 'POST',
+			// 	data: {id:id},
+			// 	success: function(response){
+			// 		console.log(response);
+			// 	}
+
+			// });
+		
+	</script>

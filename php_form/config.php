@@ -20,12 +20,14 @@
 //     // echo "Error creating database: " . $conn->error;
 //     // }
 
+//     //  BELOW IS FOR MANAS
+
 // // $conn->close();
 
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $db = "b2b";
+    $db = "b2b_updated_with_admin_2";
 
     $conn = mysqli_connect($servername, $username, $password, $db);
 

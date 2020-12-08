@@ -1,0 +1,1 @@
+[18-Jun-2020 12:50:16 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/manasch40/public_html/b2b_online_marketplace/B2B_with_server/admin/php_form/config.php on line 18

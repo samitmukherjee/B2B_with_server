@@ -1,3 +1,7 @@
+<?php
+    error_reporting(0);
+    include ("php_form/config.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,75 +41,37 @@
     <div class="main-wrap">
         <!-- Main Navigation -->
         <div class="main-nav-section">
-            <div class="user-panel">
+            <!-- <div class="user-panel">
                 <a href="login.php" class="user-login-btn border-btn">
                     <i class="fa fa-user-o" aria-hidden="true"></i> Log in
                 </a>
                 <a href="add-listing.php" class="user-addlisting-btn">
-                    <i class="fa fa-plus" aria-hidden="true"></i> Add Listing
+                    <i class="fa fa-plus" aria-hidden="true"></i> Business
                 </a>
-            </div>
+            </div> -->
             <nav class="navbar navbar-toggleable-md fixed-top">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="fa fa-bars navbar-toggle-btn" aria-hidden="true"></i>
 				</button>
-                <a class="navbar-brand" href="home-one.php">
+                <a class="navbar-brand" href="home-two.php">
                     <img src="images/logox.png" alt="img" class="img-responsive">
                 </a>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="listing-map-left.php" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Explore
-							</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
-                                <li><a class="dropdown-item" href="listing-map-left.php">Map Left</a></li>
-                                <li><a class="dropdown-item" href="listing-map-right.php">Map Right</a></li>
-                                <li><a class="dropdown-item" href="listing-map-full.php">Map Fullwidth</a></li>
-                                <li><a class="dropdown-item" href="single-listing.php">Listing Details</a></li>
-                                <li><a class="dropdown-item" href="add-listing.php">Add Listing</a></li>
-                                <li><a class="dropdown-item" href="favorite-listing.php">Favorite Listings</a></li>
-								<li><a class="dropdown-item" href="single.php">Single</a></li>
+                            <a class="nav-link dropdown-toggle" href="home-two.php" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                About us
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                                <li><a class="dropdown-item" href="about.php">About Us</a></li>
+                                <li><a class="dropdown-item" href="working-process.php">How It Works</a></li>
+                                <li><a class="dropdown-item" href="contact.php">Contact Us</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="home-one.php" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Pages
-							</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                                <li><a class="dropdown-item" href="home-one.php">Home One</a></li>
-                                <li><a class="dropdown-item" href="home-two.php">Home Two</a></li>
-                                <li><a class="dropdown-item" href="about.php">About Us</a></li>
-                                <li><a class="dropdown-item" href="working-process.php">How It Works</a></li>
-                                <li><a class="dropdown-item" href="packages.php">Listing Package</a></li>
-                                <li><a class="dropdown-item" href="gallery.php">Photo Gallery</a></li>
-                                <li><a class="dropdown-item" href="contact.php">Contact Us</a></li>
-								<li><a class="dropdown-item" href="404.php">404</a></li>
-                            </ul>
-                        </li>
-						 <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="dshboard.php" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Dashboard
-							</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
-                                <li><a class="dropdown-item" href="dashboard.php">Dashboard</a></li>
-                                <li><a class="dropdown-item" href="dashboard-all-listing.php">All listings</a></li>
-                                <li><a class="dropdown-item" href="dashboard-new-listing.php">Add new listings</a></li>
-                                <li><a class="dropdown-item" href="dashboard-active-listing.php">Active Listings</a></li>
-                                <li><a class="dropdown-item" href="dashboard-expired-listing.php">Expired Listings</a></li>
-                                <li><a class="dropdown-item" href="dashboard-favorites-listing.php">My Favorites</a></li>
-                                <li><a class="dropdown-item" href="dashboard-all-review.php">All Reviews</a></li>
-                                <li><a class="dropdown-item" href="dashboard-my-review.php">My Reviews</a></li>
-                                <li><a class="dropdown-item" href="dashboard-all-message.php">All Messages</a></li>
-                                <li><a class="dropdown-item" href="dashboard-unread-message.php">Unread Messages</a></li>
-								<li><a class="dropdown-item" href="dashboard-checkout.php">Checkout</a></li>
-								<li><a class="dropdown-item" href="dashboard-package-plan.php">Package Plan</a></li>
-								<li><a class="dropdown-item" href="dashboard-invoices.php">Invoices</a></li>
-								<li><a class="dropdown-item" href="dashboard-add-campaign.php">Add Campaign</a></li>
-								<li><a class="dropdown-item" href="dashboard-claim-refund.php">Claim & Refund</a></li>
-								<li><a class="dropdown-item" href="dashboard-settings.php">Settings</a></li>
-								<li><a class="dropdown-item" href="dashboard-profile.php">My Profile</a></li>
-                            </ul>
+                            <a href="add-listing.php" class="user-addlisting-btn" style="text-align: center; line-height: 31px; color: #fff; padding: 3px 31px !important; margin-top: 3px;">
+                                <i class="fa fa-plus" aria-hidden="true"></i> Business
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -113,18 +79,18 @@
         </div>
         <!-- main nav section -->
         <div class="subheader">
-            <h2></h2>
+            <h2>User Signup</h2>
             <div class="overlay"></div>
         </div>
         <div class="breadcrumb-block">
             <div class="container">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                    <li class="breadcrumb-item"><a href="home-two.php">Home</a></li>
                     <li class="breadcrumb-item active">Sign up</li>
                 </ol>
                 <div class="breadcrumb-call-to-action">
                     <p><i class="fa fa-phone" aria-hidden="true"></i> +1-0000-000-000</p>
-                    <a href="javascript:void(0)" class="contact-btn">
+                    <a href="contact.php" class="contact-btn">
 					Contact Us
 				</a>
                 </div>
@@ -139,54 +105,54 @@
                                 <h4>Sign up</h4>
                             </div>
                             <div class="form-block">
-                                <form class="form-common">
+                                <form class="form-common" method="post" action="php_form/signup_form.php" enctype="multipart/form-data">
                                     <div class="form-group">
-                                        <label for="userName">First name *</label>
-                                        <input type="text" class="form-control" id="userFirstName" placeholder="Enter your First Name">
+                                        <label >First name *</label>
+                                        <input type="text" class="form-control" id="firstName" name="first_name" placeholder="Enter your First Name" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="userName">Last Name *</label>
-                                        <input type="text" class="form-control" id="userLastName" placeholder="Enter your Last Name">
+                                        <label >Last Name *</label>
+                                        <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Enter your Last Name" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="userName">Contact Number *</label>
-                                        <input type="Contact" class="form-control" id="userContactNo" placeholder="Enter your Contact Number">
+                                        <label >Contact Number *</label>
+                                        <input type="Contact" class="form-control" id="contact_no" name="contact_no" placeholder="Enter your Contact Number" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="userName">Email Address *</label>
-                                        <input type="Email" class="form-control" id="userName" placeholder="Enter your Email ID">
+                                        <label >Email Address *</label>
+                                        <input type="Email" class="form-control" id="email" name="user_email_id" placeholder="Enter your Email ID" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="password">Password *</label>
-                                        <input type="password" class="form-control" id="password" placeholder="Enter your Password">
+                                        <label >Password *</label>
+                                        <input type="password" class="form-control" id="user_password_1" name="user_password_1" placeholder="Enter your Password" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="password">Confirm Password *</label>
-                                        <input type="password" class="form-control" id="password" placeholder="Re-Enter your Password">
+                                        <label >Confirm Password *</label>
+                                        <input type="password" class="form-control" id="user_password_2" name="user_password_2" placeholder="Re-Enter your Password" required>
                                     </div>
-                                    <!-- <div class="form-group row form-check-row">
+                                    <div class="form-group row form-check-row">
                                         <div class="col-md-6">
                                             <div class="row">
-                                                <div class="form-check">
-                                                    <label class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input">
+                                                <div class="form-check" style="width: 50px;">
+                                                    <label class="custom-control custom-checkbox condition-text">
+													<input type="checkbox" class="custom-control-input" name="accept" required>
 													<span class="custom-control-indicator"></span>
-													<span class="custom-control-description">Remember Me</span>
+													<span class="custom-control-description">I accept <a href="#">Terms and Conditions</a></span>
 												</label>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <!-- <div class="col-md-6">
                                             <div class="row">
                                                 <div class="forgot-link-block">
                                                     <a href="#" class="forgot-link">Forget Password?</a>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div> -->
+                                        </div> -->
+                                    </div>
                                     <div class="form-group">
                                         <div class="form-btn-block">
-                                            <button type="submit" class="form-btn">Sign up</button>
+                                            <button type="submit" class="form-btn" name="user-submit-btn" id="user-submit-btn">Sign up</button>
                                         </div>
                                     </div>
                                 </form>
@@ -224,9 +190,9 @@
                     <a href="add-listing.php" class="icon-btn adining-listing-btn">
                         <i class="fa fa-plus" aria-hidden="true"></i> Add Listing
                     </a>
-                    <a href="single-listing.php" class="icon-btn explore-listing-btn">
+                    <!-- <a href="single-listing.php" class="icon-btn explore-listing-btn">
                         <i class="fa fa-search" aria-hidden="true"></i> Explore Listing
-                    </a>
+                    </a> -->
                 </div>
             </div>
         </div>
@@ -235,19 +201,25 @@
             <div class="footer-top-block">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-3 col-sm-6">
+                        <div class="col-lg-5 col-sm-6">
+                        </div>
+                        <div class="col-lg-2 col-sm-6" style="text-align: center; border: 1px solid white; border-radius: 4px;">
+                            <div class="footer-logo-block">
+                                <a href="home-two.php">
+                                    <img src="images/logox.png" alt="img" class="img-responsive">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-sm-6">
+                        </div>  
+                        <div class="col-lg-3 col-sm-6" style="margin-top: 25px;">
                             <div class="footer-widget">
-                                <div class="footer-logo-block">
-                                    <a href="javascript:void(0)">
-                                        <img src="images/logo.png" alt="img" class="img-responsive">
-                                    </a>
-                                </div>
                                 <p class="address">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i> Suite # 25/B, Green Street California, CA78542
                                 </p>
                                 <p><i class="fa fa-phone" aria-hidden="true"></i> +1-0000-000-000</p>
                                 <p><i class="fa fa-envelope-o" aria-hidden="true"></i> info@example.com</p>
-                                <!-- <div class="footer-social-block">
+                                <div class="footer-social-block">
                                     <span>
 										Folow us:
 									</span>
@@ -273,121 +245,108 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </div> -->
+                                </div>
                                 <!-- footer-social-block -->
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6">
+                        <div class="col-lg-3 col-sm-6" style="margin-top: 25px;">
                             <div class="footer-widget">
                                 <h4 class="footer-widget-title">Useful Links</h4>
                                 <ul class="footer-content-list">
                                     <li>
-                                        <a href="javascript:void(0)">
-											About ListingGEO
+                                        <a href="about.php">
+											About B2B Marketplace
 										</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">
+                                        <a href="working-process.php">
 											How it Works
 										</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">
-											Exclusive Listings
-										</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-											Popular Locations
-										</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
+                                        <a href="contact.php">
 											Contact us
 										</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-2 col-sm-6">
+                        <div class="col-lg-2 col-sm-6" style="margin-top: 25px;">
                             <div class="footer-widget">
                                 <h4 class="footer-widget-title">Listing Account</h4>
                                 <ul class="footer-content-list">
+                                <?php if($_SESSION['buyer'] !='buyer'): ?>
                                     <li>
-                                        <a href="login.php">
-											User Log in
+                                        <a href="business-login.php">
+											Business Log in
 										</a>
                                     </li>
+                                <?php endif; ?>
                                     <li>
-                                        <a href="signup.php">
-											User Registration
+                                        <a href="add-listing.php">
+											Business Registration
 										</a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a href="add-listing.php">
 											Add Listing
 										</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-											Favorite Lisitings
-										</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-											Pricing Plans
-										</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6">
+                        <div class="col-lg-4 col-sm-6" style="margin-top: 25px;">
                             <div class="footer-widget">
                                 <h4 class="footer-widget-title">Latest Listings</h4>
+                                <?php
+
+                                    $query_popular_category_1 = "SELECT business_id, AVG(ratings) FROM review_details GROUP BY business_id ORDER BY AVG(ratings) DESC LIMIT 2";
+                                    $result_popular_category_1 = mysqli_query($conn, $query_popular_category_1);
+                                    
+                                    while($row_popular_category_1 = mysqli_fetch_assoc($result_popular_category_1)){
+                                        $business_id_1 = $row_popular_category_1['business_id'];
+
+                                        $query_business_details = "SELECT * FROM business_details, category_table 
+                                                    WHERE business_details.business_category = category_table.category_id 
+                                                    AND business_details.business_id = '$business_id_1' ";
+
+                                        $result_business_details = mysqli_query($conn, $query_business_details);
+
+                                        $row_business_details = mysqli_fetch_assoc($result_business_details);
+
+                                        $category_business = $row_business_details['category_name'];
+                                        $category_business = ucwords($category_business);
+
+                                ?>
                                 <article class="latest-post">
                                     <div class="post-thumb">
-                                        <a href="javascript:void(0)">
-                                            <img src="images/post/7.jpg" alt="img" class="img-responsive">
+                                        <a href="javascript:void(0)" style="cursor: none;">
+                                            <img src="<?php echo $row_business_details['personal_profile_image'] ?>" alt="img" class="img-responsive">
                                         </a>
                                     </div>
                                     <div class="post-wrapper">
                                         <h6 class="title">
-                                            <a href="javascript:void(0)">
-												Grand Park Hotel
-											</a>
+                                            <a href="javascript:void(0)"  style="cursor: none;">
+                                                <?php echo $row_business_details['legal_name'] ?>
+                                            </a>
                                         </h6>
                                         <p class="post-entry">
-                                            175 Church Road, City Tower, California, CA785423
+                                            <?php echo $category_business ?>
                                         </p>
                                         <div class="post-meta">
-                                            <a href="javascript:void(0)" class="post-tag">
-												Hotel & Resort
-											</a>
+                                        <form action="./single-listing.php" method="POST">
+                                            <input type="hidden" name= "product_seller_name" value="<?php echo $row_business_details['legal_name'] ?>">
+                                            <button type="submit" id="business_button" style="background: transparent; border:none;">                                            
+                                                <a class="post-tag" style="cursor: pointer;">
+                                                    View Seller
+                                                </a>
+                                            </button>
+                                        </form>
                                         </div>
                                     </div>
                                 </article>
-                                <article class="latest-post">
-                                    <div class="post-thumb">
-                                        <a href="javascript:void(0)">
-                                            <img src="images/post/7.jpg" alt="img" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="post-wrapper">
-                                        <h6 class="title">
-                                            <a href="javascript:void(0)">
-											Grand Park Hotel
-										</a>
-                                        </h6>
-                                        <p class="post-entry">
-                                            175 Church Road, City Tower, California, CA785423
-                                        </p>
-                                        <div class="post-meta">
-                                            <a href="javascript:void(0)" class="post-tag">
-												Hotel & Resort
-											</a>
-                                        </div>
-                                    </div>
-                                </article>
+                                    <?php } ?>
+
                             </div>
                         </div>
                     </div>

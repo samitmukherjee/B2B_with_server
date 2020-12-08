@@ -1,80 +1,3 @@
-/* This css file is to override bootstarp css
-********************************************************* /
-* Theme Name: ListingGEO - Directory Listing Template
-* Theme URI:  http://themeforest.ne/user/codepassenger
-* Author: CodePassenger
-* Author URI: http://CodePassenger.com
-* Description:  listingGeo HTML5 Template
-* Version: 1.0.0
-* License: GNU General Public License v2 or later
-* License URI: http://www.gnu.org/licenses/gpl-2.0.html
-* Tags: ahtml5,css3,site template,listing,creative,geo,location
-*********************************************************** /
-
-
-/*
-|----------------------------------------------------------------------------
-| CSS INDEX
-|----------------------------------------------------------------------------
-
-
-1. General Style
-
-2. Main header Style
-
-3. Main Banner Style
-
-4. Breadcrumb Style
-
-5. About Style
-
-6. Blog Style
-
-7. Team Style
-
-8. Listing Catagory Style
-
-9. Popular Cities Style
-
-10. Working Process Style
-
-11. Single Style
-
-12. Widgets Style
-
-13. Single Style
-
-14. Testimonial Style
-
-15. Call to action Style
-
-16. Working Map Style
-
-17. Pricing Style
-
-18. Form Style
-
-19. Map Style
-
-20. Listing Map Style
-
-21. Add listing Style
-
-22. Pagination Style
-
-23. Contact Style
-
-24. 404 Style
-
-25. Dashboard Style
-
-26. Footer Style
-*/
-/*
-|----------------------------------------------------------------------------
-| 1. General Style
-|----------------------------------------------------------------------------
-*/
 html, html a {
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important; }
@@ -92,6 +15,170 @@ body {
   font-weight: 400;
   background: transparent;
   text-rendering: optimizeLegibility; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas: ". . . ." ". . . .";
+}
+
+.new_arrivals{
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.new_arrivals img{
+    width: 90%;
+    vertical-align: middle;
+}
+
+/* Popular Categories Section */
+
+.product-card {
+    width: 100%;
+    position: relative;
+    box-shadow: 0 2px 7px #dfdfdf;
+    background: #fafafa;
+}
+
+.product-tumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    background: #f0f0f0;
+}
+
+.product-tumb img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.product-details {
+    padding: 20px 16px;;
+}
+.product-catagory {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ccc;
+    margin-bottom: 18px;
+}
+
+.product-details h4 a {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 18px;
+    color: #363636;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.product-details h4 a:hover {
+    color: #3867D6;
+}
+
+.section-title h3 a:hover {
+  color: #3867D6;
+}
+
+.product-details p {
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 18px;
+    color: #999;
+}
+
+.product-bottom-details {
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.product-bottom-details div {
+    float: left;
+    width: 50%;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #000;
+    font-weight: 400;
+    padding-top: 2px;
+}
+
+.product-links {
+    text-align: right;
+}
+
+
+.product-links a {
+    display: inline-block;
+    margin-left: 5px;
+    color: #fff;
+    background-color: #3867D6;
+    border-radius: 4px;
+    padding: 1px 4px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.product-links a:hover {
+    color: #3867D6; 
+    border: 1px solid #3867D6;
+}
+
+/* Best Seller Section */
+
+.seller-card {
+  width: 100%;
+  position: relative;
+  box-shadow: 0 2px 7px #dfdfdf;
+  background: #fafafa;
+}
+
+.seller-tumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  background: #f0f0f0;
+}
+
+.seller-tumb img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.seller-details {
+  padding: 20px 8px;
+}
+
+.seller-details h4 a {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 18px;
+  color: #363636;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.seller-details h4 a:hover {
+  color: #3867D6;
+}
+
+.seller-rating {
+  overflow: hidden;
+  border-top: 1px solid #eee;
+  font-size: 18px;
+  color: #3867D6;
+  font-weight: 600;
+  padding-top: 10px;
+}
 
 p {
   line-height: 26px;
@@ -139,7 +226,7 @@ a {
   display: inline-block;
   -webkit-transition: 0.4s ease-in;
   -o-transition: 0.4s ease-in;
-  transition: 0.4s ease-in; }
+  /*transition: 0.4s ease-in;*/}
   a:hover, a:focus {
     text-decoration: none;
     color: #111;
@@ -157,7 +244,7 @@ iframe {
   top: 0;
   height: 100%;
   width: 100%;
-  background: rgba(17,17,17,0.7);
+  background: rgba(61, 61, 61, 0.7);
    }
 
 .overlay1 {
@@ -201,6 +288,24 @@ iframe {
     outline: 0; }
   .icon-btn i.fa {
     margin-right: 5px; }
+
+.icon-btn {
+  width: 177px;
+  height: 45px;
+  margin-left: 450px;
+  margin-top: -150px;
+  line-height: 45px;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  border: none; }
+  .icon-btn:hover, .icon-btn:focus, .icon-btn:active {
+    color: #fff;
+    outline: 0; }
+  .icon-btn i.fa {
+    margin-right: 5px; }
+
+
 
 a[class^='icon-btn-'] {
   width: 130px;
@@ -300,6 +405,7 @@ a[class^='icon-btn-'] {
     color: #fff; }
 
 .success-btn,
+.search-btn,
 .danger-btn {
   width: 110px;
   height: 40px;
@@ -309,6 +415,7 @@ a[class^='icon-btn-'] {
   border: none;
   text-align: center; }
   .success-btn:focus, .success-btn:active, .success-btn:hover,
+  .search-btn:focus, .search-btn:active, .search-btn:hover,
   .danger-btn:focus,
   .danger-btn:active,
   .danger-btn:hover {
@@ -316,7 +423,10 @@ a[class^='icon-btn-'] {
     color: #fff; }
 
 .success-btn {
-  background: #9dcb45; }
+  background: #3867D6; }
+
+.search-btn {
+  background: #3867D6; }
 
 .danger-btn {
   background: #3867D6; }
@@ -350,6 +460,10 @@ a[class^='icon-btn-'] {
     .social-share-block button:hover, .social-share-block button:focus, .social-share-block button:active {
       border: none;
       outline: 0; }
+
+.condition-text a {
+  color: #3867D6;
+  text-decoration: underline; }
 
 .social-list {
   margin: 0;
@@ -489,8 +603,6 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .dropdown-toggle::after {
   border: none;
   position: absolute;
-  top: 25%;
-  right: 10px;
   content: "\f107";
   font-family: 'FontAwesome'; }
 
@@ -539,7 +651,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     opacity: 1;
     visibility: visible; }
   .navbar .navbar-collapse {
-    width: 65%; }
+    width: 90%; }
   .navbar .navbar-brand {
     display: inline-block; }
 
@@ -607,11 +719,11 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 | 3. Main Banner Style
 |----------------------------------------------------------------------------
 */
-.main-header-section {
-  padding: 220px 0 140px 0;
+/* .main-header-section {
+  padding: 220px 0 80px 0;
   position: relative;
-  background: url(../images/background/8.svg) center center no-repeat;
-  background-size: cover; }
+  background: url(../images/homepage/bg_1.jpg) center center no-repeat;
+  background-size: cover; } */
 
 .header-content-block {
   position: relative;
@@ -621,13 +733,13 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
   text-align: center; }
   .header-title-block h2 {
     font-size: 62px;
-    color: #FFF;
+    color: #ffffff;
     margin-bottom: 0;
     line-height: 70px;
     margin-bottom: 20px; }
   .header-title-block p {
     font-size: 22px;
-    color: #FFF;
+    color: #ffffff;
     margin-bottom: 20px; }
 
 .filter-form.filter-header-form .form-group {
@@ -635,8 +747,9 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 
 .filter-form.filter-header-form .outer-select-input-box {
   width: 255px;
-  border-radius: 15px;
-  border-color: #3867D6; }
+  border-radius: 10px;
+  border: 0px;
+}
   
 .filter-form.filter-header-form button {
   width: 150px;
@@ -745,6 +858,12 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     margin-bottom: 0;
     margin-right: 25px;
     display: inline-block; }
+
+.breadcrumb-call-to-action-1 {
+  width: 50%;
+  text-align: right;
+  display: inline-block;
+  margin-left: 80px; }
 
 /*
 |----------------------------------------------------------------------------
@@ -971,7 +1090,9 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
       .popular-listing-post .post-meta .location i.fa, .popular-listing-post .post-meta .location h5 {
         display: inline-block; }
     .popular-listing-post .post-meta .tag {
-      text-align: right; }
+      text-align: left;
+      width: 100%;
+     }
       .popular-listing-post .post-meta .tag span {
         margin-right: 10px;
         padding: 0 3px;
@@ -981,7 +1102,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
       .popular-listing-post .post-meta .tag i.fa {
         color: #9dcb45; }
   .popular-listing-post .post-entry-block {
-    padding: 15px 20px;
+    padding: 10px 30px;
     background: #fff; }
     .popular-listing-post .post-entry-block .post-author {
       width: 18%;
@@ -1015,14 +1136,16 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
       .popular-listing-post .post-footer .schedule-info i.fa {
         margin-right: 5px; }
     .popular-listing-post .post-footer .contact-no i.fa {
-      margin-right: 5px;
-      color: #3867D6; }
+      margin-right: 4px;
+      color: #3867D6;
+       }
     .popular-listing-post .post-footer .schedule-info {
-      text-align: right; }
+      text-align: right;
+      margin-left: -25px; }
       .popular-listing-post .post-footer .schedule-info h5 {
         margin-bottom: 0; }
     .popular-listing-post .post-footer .schedule-info.closed i.fa, .popular-listing-post .post-footer .schedule-info.closed h5 {
-      color: #ff1f1f; }
+      color: #3867D6; }
     .popular-listing-post .post-footer .schedule-info.open i.fa, .popular-listing-post .post-footer .schedule-info.open h5 {
       color: #9dcb45; }
     .popular-listing-post .post-footer .schedule-info.expired i.fa, .popular-listing-post .post-footer .schedule-info.expired h5 {
@@ -1220,7 +1343,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 
 .catagory-text {
   position: absolute;
-  top: 78%;
+  top: 70%;
   left: 0;
   right: 0;
   z-index: 999;
@@ -1253,8 +1376,6 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 | 9. Popular Cities Style
 |----------------------------------------------------------------------------
 */
-.popular_products {
-  padding-top: 80px; }
 
 .popular-cities-block {
   position: relative;
@@ -1288,7 +1409,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     top: 45%;
     opacity: 1;
     visibility: visible; }
-
+    
 .popular-cities-info-block {
   position: absolute;
   top: 60%;
@@ -1304,6 +1425,50 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     margin-bottom: 0;
     color: #fff; }
 
+.center-button1 {
+  margin: 0;
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+/*
+|----------------------------------------------------------------------------
+| New Arrival
+|----------------------------------------------------------------------------
+*/
+.center-button {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.carousel-inner.vv-3 .carousel-item.active,
+.carousel-inner.vv-3 .carousel-item-next,
+.carousel-inner.vv-3 .carousel-item-prev {
+  display: flex;
+}
+
+.carousel-inner.vv-3 .carousel-item-right.active,
+.carousel-inner.vv-3 .carousel-item-next {
+  transform: translateX(17%);
+}
+
+.carousel-inner.vv-3 .carousel-item-left.active,
+.carousel-inner.vv-3 .carousel-item-prev {
+  transform: translateX(-17%);
+}
+
+.carousel-inner.vv-3 .carousel-item-right,
+.carousel-inner.vv-3 .carousel-item-left {
+  transform: translateX(0);
+}
+
 /*
 |----------------------------------------------------------------------------
 | 10. Working Process Style
@@ -1311,7 +1476,8 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 */
 .working-process-section {
   position: relative;
-  padding: 80px 0;
+  padding-bottom: 80px;
+  margin-top: 40px;
   background: #3867D6; }
   .working-process-section .section-title h2, .working-process-section .section-title p {
     color: #fff; }
@@ -1355,12 +1521,13 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     font-size: 32px;
     color: #fff;
     margin-bottom: 0;
+    margin-top: 80px;
     font-weight: 400;
-    line-height: 40px; }
+    line-height: 60px; }
   .subheader-two-block p {
     font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 8px;
+    font-weight: 400;
+    margin-bottom: 20px;
     color: #fff; }
   .subheader-two-block ul li {
     list-style: none;
@@ -1759,7 +1926,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
   -moz-box-shadow: 0px 1px 11px -1px rgba(216, 216, 216, 0.75);
   box-shadow: 0px 1px 11px -1px rgba(216, 216, 216, 0.75); }
   .sidebar .widget span {
-    font-size: 12px; }
+    font-size: 16px; }
 
 .sidebar .widget-body {
   padding: 25px 30px 25px 30px; }
@@ -2069,16 +2236,26 @@ textarea {
 .form-common {
   margin-bottom: 20px; }
   .form-common .form-group {
-    margin: 0 0 10px 0; }
+    margin: 0 0 10px 0;
+    left: 100; }
     .form-common .form-group label {
       font-size: 14px;
       line-height: 23px;
+      width: 400px;
       font-weight: 600;
       color: #111; }
     .form-common .form-group .form-control {
       height: auto;
       font-size: 12px;
-      padding: 13px 0 13px 30px;
+      padding: 8px 8px 8px 8px;
+      border-radius: 3px;
+      border: 1px solid #e7e7e7;
+      background: transparent; }
+      .form-control1 {
+      height: auto;
+      width: 750px;
+      font-size: 12px;
+      padding: 8px 8px 8px 8px;
       border-radius: 3px;
       border: 1px solid #e7e7e7;
       background: transparent; }
@@ -2251,7 +2428,7 @@ textarea {
   position: relative; }
 
 .outer-select-input-box {
-  padding-left: 105px;
+  padding-left: 10%;
   height: 45px;
   width: 210px; }
 
@@ -2261,11 +2438,16 @@ textarea {
   top: 9px;
   height: 65%; }
 
+.input-dropdown-btn {
+  position: absolute;
+  height: 45px; }
+
 .full-width .filter-form .form-group {
-  width: 285px; }
+  width: 285px;
+  margin-left: 100px; }
 
 .full-width .outer-select-input-box {
-  width: 270px; }
+  width: 100%; }
 
 .full-width .inner-row .form-group {
   width: 58%;
@@ -2281,17 +2463,20 @@ textarea {
   position: relative;
   padding: 35px 0 40px 0;
   margin-bottom: 0; }
+
   .filter-form .success-btn,
   .filter-form .danger-btn {
     height: 45px; }
+
   .filter-form .btn-group {
     position: absolute;
     top: 35px;
     right: 150;
-    margin: 0; }
+    margin: 0;
+    margin-left: -500px; }
     .filter-form .btn-group button {
       margin: 0 130px;
-      border-radius: 15px;
+      border-radius: 4px;
       cursor: pointer; }
   .filter-form .inner-row {
     margin-top: 15px;
@@ -2837,7 +3022,7 @@ input:-moz-placeholder {
   padding: 10px 20px; }
 
 .dashboard .navbar {
-  background: black; }
+  background: rgba(0, 0, 0, 0.77); }
 
 .dashboard .lobipanel > .panel-heading .dropdown .dropdown-menu {
   opacity: 1;
@@ -3028,7 +3213,20 @@ body.dashboard {
   -ms-transform: translate3d(200px, 0, 0);
   -o-transform: translate3d(200px, 0, 0);
   transform: translate3d(250px, 0, 0);
-  top: 120px; }
+  top: 65px;
+  left: -60px; }
+
+.page-container-wrap-1 {
+  margin-left: 0;
+  width: 185%;
+  position: relative;
+  -webkit-transform: translate3d(200px, 0, 0);
+  -moz-transform: translate3d(200px, 0, 0);
+  -ms-transform: translate3d(200px, 0, 0);
+  -o-transform: translate3d(200px, 0, 0);
+  transform: translate3d(250px, 0, 0);
+  top: 100px;
+  left: -60px; }
 
 .cbp-spmenu {
   background: #fff;
@@ -3492,3 +3690,5 @@ ul.social {
         transition: 0.3s ease-in; }
         .footer-bottom-block .footer-nav li a:hover, .footer-bottom-block .footer-nav li a:active, .footer-bottom-block .footer-nav li a:focus {
           color: #3867D6; }
+
+

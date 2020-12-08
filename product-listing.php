@@ -1,3 +1,9 @@
+
+
+<!-- Not in use!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,74 +39,74 @@
     <div class="main-wrap">
         <!-- Main Navigation -->
         <div class="main-nav-section">
-            <div class="user-panel">
-                <a href="login.html" class="user-login-btn border-btn">
+            <!-- <div class="user-panel">
+                <a href="login.php" class="user-login-btn border-btn">
                     <i class="fa fa-user-o" aria-hidden="true"></i> Log in
                 </a>
-                <a href="add-listing.html" class="user-addlisting-btn">
+                <a href="add-listing.php" class="user-addlisting-btn">
                     <i class="fa fa-plus" aria-hidden="true"></i> Add Listing
                 </a>
-            </div>
+            </div> -->
             <nav class="navbar navbar-toggleable-md fixed-top">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="fa fa-bars navbar-toggle-btn" aria-hidden="true"></i>
 				</button>
-                <a class="navbar-brand" href="home-two.html">
+                <a class="navbar-brand" href="home-two.php">
                     <img src="images/logox.png" alt="img" class="img-responsive">
                 </a>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="listing-map-left.html" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="listing-map-left.php" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Explore
 							</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
-                                <li><a class="dropdown-item" href="listing-map-left.html">Map Left</a></li>
-                                <li><a class="dropdown-item" href="listing-map-right.html">Map Right</a></li>
-                                <li><a class="dropdown-item" href="listing-map-full.html">Map Fullwidth</a></li>
-                                <li><a class="dropdown-item" href="single-listing.html">Listing Details</a></li>
-                                <li><a class="dropdown-item" href="add-listing.html">Add Listing</a></li>
-                                <li><a class="dropdown-item" href="favorite-listing.html">Favorite Listings</a></li>
-								<li><a class="dropdown-item" href="single.html">Single</a></li>
+                                <li><a class="dropdown-item" href="listing-map-left.php">Map Left</a></li>
+                                <li><a class="dropdown-item" href="listing-map-right.php">Map Right</a></li>
+                                <li><a class="dropdown-item" href="listing-map-full.php">Map Fullwidth</a></li>
+                                <li><a class="dropdown-item" href="single-listing.php">Listing Details</a></li>
+                                <li><a class="dropdown-item" href="add-listing.php">Add Listing</a></li>
+                                <li><a class="dropdown-item" href="favorite-listing.php">Favorite Listings</a></li>
+								<li><a class="dropdown-item" href="single.php">Single</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="home-one.html" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="home-one.php" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Pages
 							</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                                <li><a class="dropdown-item" href="home-one.html">Home One</a></li>
-                                <li><a class="dropdown-item" href="home-two.html">Home Two</a></li>
-                                <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                                <li><a class="dropdown-item" href="working-process.html">How It Works</a></li>
-                                <li><a class="dropdown-item" href="packages.html">Listing Package</a></li>
-                                <li><a class="dropdown-item" href="gallery.html">Photo Gallery</a></li>
-                                <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
-								<li><a class="dropdown-item" href="404.html">404</a></li>
+                                <li><a class="dropdown-item" href="home-one.php">Home One</a></li>
+                                <li><a class="dropdown-item" href="home-two.php">Home Two</a></li>
+                                <li><a class="dropdown-item" href="about.php">About Us</a></li>
+                                <li><a class="dropdown-item" href="working-process.php">How It Works</a></li>
+                                <li><a class="dropdown-item" href="packages.php">Listing Package</a></li>
+                                <li><a class="dropdown-item" href="gallery.php">Photo Gallery</a></li>
+                                <li><a class="dropdown-item" href="contact.php">Contact Us</a></li>
+								<li><a class="dropdown-item" href="404.php">404</a></li>
                             </ul>
                         </li>
 						 <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="dshboard.html" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="dshboard.php" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Dashboard
 							</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
-                                <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
-                                <li><a class="dropdown-item" href="dashboard-all-listing.html">All listings</a></li>
+                                <li><a class="dropdown-item" href="dashboard.php">Dashboard</a></li>
+                                <li><a class="dropdown-item" href="dashboard-all-listing.php">All listings</a></li>
                                 <!-- <li><a class="dropdown-item" href="dashboard-new-listing.html">Add new listings</a></li>
                                 <li><a class="dropdown-item" href="dashboard-active-listing.html">Active Listings</a></li>
                                 <li><a class="dropdown-item" href="dashboard-expired-listing.html">Expired Listings</a></li>
                                 <li><a class="dropdown-item" href="dashboard-favorites-listing.html">My Favorites</a></li> -->
-                                <li><a class="dropdown-item" href="dashboard-all-review.html">All Reviews</a></li>
+                                <li><a class="dropdown-item" href="dashboard-all-review.php">All Reviews</a></li>
                                 <!-- <li><a class="dropdown-item" href="dashboard-my-review.html">My Reviews</a></li> -->
-                                <li><a class="dropdown-item" href="dashboard-all-message.html">All Messages</a></li>
+                                <li><a class="dropdown-item" href="dashboard-all-message.php">All Messages</a></li>
                                 <!-- <li><a class="dropdown-item" href="dashboard-unread-message.html">Unread Messages</a></li>
 								<li><a class="dropdown-item" href="dashboard-checkout.html">Checkout</a></li>
 								<li><a class="dropdown-item" href="dashboard-package-plan.html">Package Plan</a></li>
 								<li><a class="dropdown-item" href="dashboard-invoices.html">Invoices</a></li>
 								<li><a class="dropdown-item" href="dashboard-add-campaign.html">Add Campaign</a></li>
 								<li><a class="dropdown-item" href="dashboard-claim-refund.html">Claim & Refund</a></li> -->
-								<li><a class="dropdown-item" href="dashboard-settings.html">Settings</a></li>
-								<li><a class="dropdown-item" href="dashboard-profile.html">My Profile</a></li>
+								<li><a class="dropdown-item" href="dashboard-settings.php">Settings</a></li>
+								<li><a class="dropdown-item" href="dashboard-profile.php">My Profile</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -143,11 +149,11 @@
                                 <div class="businessinfo-left-block">
                                     <div class="form-group">
                                         <label for="product_name">Product Name</label>
-                                        <input id="product_name" name="product_name" type="text" class="form-control form-single-element" placeholder="Ex: iPhone X" aria-required="true">
+                                        <input id="product_name" name="product_name" type="text" class="form-control form-single-element" placeholder="Ex: iPhone X" aria-required="true" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="brand_name">Brand Name</label>
-                                        <input id="brand_name" name="brand_name" type="text" class="form-control" placeholder="Ex: Apple" aria-required="true">
+                                        <input id="brand_name" name="brand_name" type="text" class="form-control" placeholder="Ex: Apple" aria-required="true" required>
                                     </div>
                                 </div>
                             </div>  
@@ -160,7 +166,7 @@
                             <div class="col-lg-5">
                                 <div class="form-group">
                                     <label for="product_category">Product Category</label>
-                                    <select id="product_category" name="product_category" class="form-control">
+                                    <select id="product_category" name="product_category" class="form-control" required>
                                         <option value="none" selected disabled hidden>Select an Option</option>
                                         <option>Aerospace Industry</option>
 										<option>Apparel and Garments</option>
@@ -186,13 +192,13 @@
                             </div>
                             <div class="col-lg-2">
                                 <div class="form-group listing-price">
-                                    <input id="product_price" name="product_price" type="text" class="form-control" placeholder="Price in Rupees" aria-required="true">
+                                    <input id="product_price" name="product_price" type="text" class="form-control" placeholder="Price in Rupees" aria-required="true" required>
                                 </div>
                             </div>
                             <div class="col-lg-5">
                                 <div class="form-group">
                                     <label for="product_unit">Product Unit</label>
-                                    <select id="product_unit" name="product_unit" class="form-control">
+                                    <select id="product_unit" name="product_unit" class="form-control" required>
                                         <option value="none" selected disabled hidden>Select an Option</option>
                                         <option>Grams</option>
 										<option>Litres</option>
@@ -202,149 +208,7 @@
 									</select>
                                 </div>
                             </div>
-                            <!-- <div class="col-lg-12">
-                                <div class="listing-features-block">
-                                    <h5>Select listing features</h5>
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-group">
-                                                        <div class="form-check">
-                                                            <label class="custom-control custom-checkbox">
-																<input type="checkbox" class="custom-control-input">
-																<span class="custom-control-indicator"></span>
-																<span class="custom-control-description">Air Conditioned</span>
-															</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <label class="custom-control custom-checkbox">
-																<input type="checkbox" class="custom-control-input">
-																<span class="custom-control-indicator"></span>
-																<span class="custom-control-description">Air Conditioned</span>
-															</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <label class="custom-control custom-checkbox">
-																<input type="checkbox" class="custom-control-input">
-																<span class="custom-control-indicator"></span>
-																<span class="custom-control-description">Air Conditioned</span>
-															</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <label class="custom-control custom-checkbox">
-																<input type="checkbox" class="custom-control-input">
-																<span class="custom-control-indicator"></span>
-																<span class="custom-control-description">Air Conditioned</span>
-															</label>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                </td>
-                                                <td>
-                                                    <div class="form-group">
-                                                        <div class="form-check">
-                                                            <label class="custom-control custom-checkbox">
-																<input type="checkbox" class="custom-control-input">
-																<span class="custom-control-indicator"></span>
-																<span class="custom-control-description">Air Conditioned</span>
-															</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <label class="custom-control custom-checkbox">
-																<input type="checkbox" class="custom-control-input">
-																<span class="custom-control-indicator"></span>
-																<span class="custom-control-description">Air Conditioned</span>
-															</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <label class="custom-control custom-checkbox">
-																<input type="checkbox" class="custom-control-input">
-																<span class="custom-control-indicator"></span>
-																<span class="custom-control-description">Air Conditioned</span>
-															</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <label class="custom-control custom-checkbox">
-																<input type="checkbox" class="custom-control-input">
-																<span class="custom-control-indicator"></span>
-																<span class="custom-control-description">Air Conditioned</span>
-															</label>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                </td>
-                                                <td>
-                                                    <div class="form-group">
-                                                        <div class="form-check">
-                                                            <label class="custom-control custom-checkbox">
-																<input type="checkbox" class="custom-control-input">
-																<span class="custom-control-indicator"></span>
-																<span class="custom-control-description">Air Conditioned</span>
-															</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <label class="custom-control custom-checkbox">
-																<input type="checkbox" class="custom-control-input">
-																<span class="custom-control-indicator"></span>
-																<span class="custom-control-description">Air Conditioned</span>
-															</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <label class="custom-control custom-checkbox">
-																<input type="checkbox" class="custom-control-input">
-																<span class="custom-control-indicator"></span>
-																<span class="custom-control-description">Air Conditioned</span>
-															</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <label class="custom-control custom-checkbox">
-																<input type="checkbox" class="custom-control-input">
-																<span class="custom-control-indicator"></span>
-																<span class="custom-control-description">Air Conditioned</span>
-															</label>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                </td>
-                                                <td>
-                                                    <div class="form-group">
-                                                        <div class="form-check">
-                                                            <label class="custom-control custom-checkbox">
-																<input type="checkbox" class="custom-control-input">
-																<span class="custom-control-indicator"></span>
-																<span class="custom-control-description">Air Conditioned</span>
-															</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <label class="custom-control custom-checkbox">
-																<input type="checkbox" class="custom-control-input">
-																<span class="custom-control-indicator"></span>
-																<span class="custom-control-description">Air Conditioned</span>
-															</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <label class="custom-control custom-checkbox">
-																<input type="checkbox" class="custom-control-input">
-																<span class="custom-control-indicator"></span>
-																<span class="custom-control-description">Air Conditioned</span>
-															</label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <label class="custom-control custom-checkbox">
-																<input type="checkbox" class="custom-control-input">
-																<span class="custom-control-indicator"></span>
-																<span class="custom-control-description">Air Conditioned</span>
-															</label>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div> -->
+                            
                         </div>
                     </div>
                     <!-- Others-Information-listing -->
@@ -353,14 +217,14 @@
                         <div class="form-group listing-compose-block">
                             <label for="product_description">Description</label>
                             <div class="form-group textarea-form-group">
-                                <textarea rows="5" cols="50" id="product_description" name="product_description" class="form-control" placeholder="Description here"></textarea>
+                                <textarea rows="5" cols="50" id="product_description" name="product_description" class="form-control" placeholder="Description here" required></textarea>
                             </div>                            
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group textarea-form-group">
                                     <label for="key_words">Keywords</label>
-                                    <textarea rows="5" cols="50" id="key_words" name="key_words" class="form-control" placeholder="Comma Seperated Ex:  Real Estate, Construction"></textarea>
+                                    <textarea rows="5" cols="50" id="key_words" name="key_words" class="form-control" placeholder="Comma Seperated Ex:  Real Estate, Construction" required></textarea>
                                 </div>                                
                                 <!-- <button type="button" class="listing-btn-large">+ Add New</button> -->
                             </div>
@@ -368,14 +232,24 @@
                                 <div class="uload-images-block">
                                     <h5>Upload Images</h5>
                                     <div class="form-group form-group-file-type">
-                                        <label for="company_logo">Company Logo</label>
-                                        <input type="file" class="form-control-file" id="company_logo" name="company_logo">
-                                        <span>Maximum file size: 20 MB.</span>
+                                        <label for="brand_logo">Company Logo</label>
+                                        <input type="file" class="form-control-file" id="brand_logo" name="brand_logo" accept="image/png, image/jpeg, image/jpg" required>
+                                        <span>Maximum file size: 2 MB.</span>
                                     </div>
                                     <div class="form-group form-group-file-type">
-                                        <label for="product_images">Gallery Images </label>
-                                        <input type="file" class="form-control-file" id="product_images" name="product_images">
-                                        <span>Maximum file size: 90 MB.</span>
+                                        <label for="product_image_1">Product Image 1</label>
+                                        <input type="file" class="form-control-file" id="product_image_1" name="product_image_1" accept="image/png, image/jpeg, image/jpg" required>
+                                        <span>Maximum file size: 10 MB.</span>
+                                    </div>
+                                    <div class="form-group form-group-file-type">
+                                        <label for="product_image_2">Product Image 2</label>
+                                        <input type="file" class="form-control-file" id="product_image_2" name="product_image_2" accept="image/png, image/jpeg, image/jpg" required>
+                                        <span>Maximum file size: 10 MB.</span>
+                                    </div>
+                                    <div class="form-group form-group-file-type">
+                                        <label for="product_image_3">Product Image 3</label>
+                                        <input type="file" class="form-control-file" id="product_image_3" name="product_image_3" accept="image/png, image/jpeg, image/jpg" required>
+                                        <span>Maximum file size: 10 MB.</span>
                                     </div>
                                 </div>
                             </div>
@@ -385,8 +259,9 @@
                     <div class="listing-block attach-document-listing">
                         <div class="form-group form-group-file-type">
                             <label for="product_brochure">Product Brochure</label>
-                            <input type="file" class="form-control-file" id="product_brochure" name="product_brochure">
-                            <span>File Format .pdf, .doc, .docx, .ppt, .pptx, .jpeg, .png</span>
+                            <input type="file" class="form-control-file" id="product_brochure" name="product_brochure" accept="image/png, image/jpeg, image/jpg, .pdf" required>
+                            <span>File Format .pdf, .jpeg, .png</span>
+                            <span>Maximum file size: 25 MB.</span>
                         </div>
                     </div>
                     <div class="breadcrumb-call-to-action">

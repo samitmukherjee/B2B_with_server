@@ -1,3 +1,7 @@
+<?php
+    error_reporting(0);
+    include ("php_form/config.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +17,9 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" type='text/css'>
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/themify-icons.css">
@@ -33,14 +40,14 @@
     <div class="main-wrap">
         <!-- Main Navigation -->
         <div class="main-nav-section">
-            <div class="user-panel">
+            <!-- <div class="user-panel">
                 <a href="login.php" class="user-login-btn border-btn">
                     <i class="fa fa-user-o" aria-hidden="true"></i> Log in
                 </a>
                 <a href="add-listing.php" class="user-addlisting-btn">
-                    <i class="fa fa-plus" aria-hidden="true"></i> Add Listing
+                    <i class="fa fa-plus" aria-hidden="true"></i> Business
                 </a>
-            </div>
+            </div> -->
             <nav class="navbar navbar-toggleable-md fixed-top">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="fa fa-bars navbar-toggle-btn" aria-hidden="true"></i>
@@ -51,57 +58,20 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="listing-map-left.php" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Categories
-							</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
-                                <li><a class="dropdown-item" href="listing-map-left.php">Category 1</a></li>
-                                <li><a class="dropdown-item" href="listing-map-right.php">Category 2</a></li>
-                                <li><a class="dropdown-item" href="listing-map-full.php">Category 3</a></li>
-                                <li><a class="dropdown-item" href="single-listing.php">Categpry 4</a></li>
-                                <!-- <li><a class="dropdown-item" href="add-listing.php">Add Listing</a></li>
-                                <li><a class="dropdown-item" href="favorite-listing.php">Favorite Listings</a></li>
-								<li><a class="dropdown-item" href="single.php">Single</a></li> -->
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="home-two.php" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								About Us
 							</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                                <!-- <li><a class="dropdown-item" href="home-two.php">Home One</a></li>
-                                <li><a class="dropdown-item" href="home-two.php">Home Two</a></li> -->
+                                
                                 <li><a class="dropdown-item" href="about.php">About Us</a></li>
                                 <li><a class="dropdown-item" href="working-process.php">How It Works</a></li>
-                                <!-- <li><a class="dropdown-item" href="packages.php">Listing Package</a></li>
-                                <li><a class="dropdown-item" href="gallery.php">Photo Gallery</a></li> -->
                                 <li><a class="dropdown-item" href="contact.php">Contact Us</a></li>
-								<!-- <li><a class="dropdown-item" href="404.php">404</a></li> -->
                             </ul>
                         </li>
-						 <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="dshboard.php" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Dashboard
-							</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
-                                <li><a class="dropdown-item" href="dashboard.php">Dashboard</a></li>
-                                <li><a class="dropdown-item" href="dashboard-all-listing.php">All listings</a></li>
-                                <!-- <li><a class="dropdown-item" href="dashboard-new-listing.php">Add new listings</a></li>
-                                <li><a class="dropdown-item" href="dashboard-active-listing.php">Active Listings</a></li>
-                                <li><a class="dropdown-item" href="dashboard-expired-listing.php">Expired Listings</a></li>
-                                <li><a class="dropdown-item" href="dashboard-favorites-listing.php">My Favorites</a></li> -->
-                                <li><a class="dropdown-item" href="dashboard-all-review.php">All Reviews</a></li>
-                                <!-- <li><a class="dropdown-item" href="dashboard-my-review.php">My Reviews</a></li> -->
-                                <li><a class="dropdown-item" href="dashboard-all-message.php">All Messages</a></li>
-                                <!-- <li><a class="dropdown-item" href="dashboard-unread-message.php">Unread Messages</a></li>
-								<li><a class="dropdown-item" href="dashboard-checkout.php">Checkout</a></li>
-								<li><a class="dropdown-item" href="dashboard-package-plan.php">Package Plan</a></li>
-								<li><a class="dropdown-item" href="dashboard-invoices.php">Invoices</a></li>
-								<li><a class="dropdown-item" href="dashboard-add-campaign.php">Add Campaign</a></li>
-								<li><a class="dropdown-item" href="dashboard-claim-refund.php">Claim & Refund</a></li> -->
-								<li><a class="dropdown-item" href="dashboard-profile.php">User Profile</a></li>
-								<li><a class="dropdown-item" href="dashboard-business-profile.php">Business Profile</a></li>
-                            </ul>
+                        <li class="nav-item dropdown">
+                            <a href="add-listing.php" class="user-addlisting-btn" style="color: #fff;">
+                                <i class="fa fa-plus" aria-hidden="true"></i> Business
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -115,44 +85,77 @@
         <div class="breadcrumb-block">
             <div class="container">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                    <li class="breadcrumb-item"><a href="home-two.php">Home</a></li>
                     <li class="breadcrumb-item"><a href="single-listing.php">Listing </a></li>
                     <li class="breadcrumb-item active">Add Listing</li>
                 </ol>
-                <div class="breadcrumb-call-to-action">
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> +1-0000-000-000</p>
-                    <a href="javascript:void(0)" class="listing-btn-large">
-						Request Verification
-					</a>
-                </div>
             </div>
         </div>
-        <div class="add-listing-wrap">
+        <div class="add-listing-wrap" style="margin-bottom: 20px; padding: 40px;">
             <div class="container">
-                <div class="add-listing-tost-block">
-                    <p>
-                        <strong>Existing User? Please </strong><a href="login.php">Sign in.</a> <strong>New here? </strong>Please <strong>continue</strong> and enter your <strong>Name</strong> & <strong>Email</strong> Address along with listing information at the bottom.
-                    </p>
-                </div>
                 <!-- add-listing-tost-block -->
-                <form id="add_listing_form" class="form-common add-listing-form" action="#" novalidate="novalidate">
-                    <div class="listing-block businessinfo-listing">
+                <form id="add_listing_form" method="POST" class="form-common add-listing-form" action="./php_form/add_listing_form.php" enctype="multipart/form-data" style="padding: 20px; text-align:center;">
+                    
+                    <div class="listing-block businessinfo-listing" style="margin-bottom: 20px; padding: 40px; text-align:left;">
+						<h4>Personal Information</h4>
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="businessinfo-left-block">
+									<div class="form-group">
+										<label for="personal_name">Full Name</label>
+										<input id="personal_name" name="personal_name" type="text" class="form-control form-single-element" placeholder="Ex: Manas Singh" required>
+									</div>
+									<div class="form-group">
+										<label for="personal_number">Contact Number</label>
+										<input id="personal_number" name="personal_number" type="text" class="form-control" placeholder="Ex: +91-000-000-0000" required>
+									</div>
+									<div class="form-group">
+										<label for="personal_email_id">Email ID</label>
+										<input id="personal_email_id" name="personal_email_id" type="email" class="form-control" placeholder="Ex: info@example.com" required>
+									</div>
+								</div>
+							</div>
+							<!-- col-lg-6 -->
+							<div class="col-lg-6">
+								<div class="businessinfo-right-block">
+									<div class="form-group">
+										<label for="personal_address_line_1">Address</label>
+										<input id="personal_address_line_1" name="personal_address_line_1" type="text" class="form-control" placeholder="Ex: 92, West Lane" required>
+									</div>
+									<div class="form-group">
+										<input id="personal_address_line_2" name="personal_address_line_2" type="text" class="form-control" placeholder="Ex: Harvard Street, Los Angles" required>
+									</div>
+									<!-- padding: 15% 20px; 
+									padding: 60% 28.5%; -->
+								</div>
+							</div>
+						</div>
+					</div>
+
+                    <div class="listing-block businessinfo-listing" style="margin-bottom: 20px; padding: 40px; text-align:left;">
                         <h4>Business Registration</h4>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="businessinfo-left-block">
                                     <div class="form-group">
-                                        <label for="listing_name">Legal Business Name</label>
-                                        <input id="listing_name" type="text" class="form-control form-single-element" placeholder="Ex: ABC travel agency" aria-required="true">
-                                        <input id="listing_tagline" type="text" class="form-control" placeholder="Business Tagline goes here" aria-required="true">
+                                        <label for="legal_name">Legal Business Name</label>
+                                        <input id="legal_name" name="legal_name" type="text" class="form-control form-single-element" placeholder="Ex: ABC travel agency" required>
+                                        <input id="listing_tagline" name="listing_tagline" type="text" class="form-control" placeholder="Business Tagline goes here" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="listing_email">Contact Number</label>
-                                        <input id="listing_email" type="text" class="form-control" placeholder="Ex: +91-000-000-0000" aria-required="true">
+                                        <label for="contact_no">Contact Number</label>
+                                        <input id="contact_no" name="contact_no" type="text" class="form-control" placeholder="Ex: +91-000-000-0000" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="listing_phone_no">Email ID</label>
-                                        <input id="listing_phone_no" type="email" class="form-control" placeholder="Ex: info@example.com" aria-required="true">
+                                        <label for="business_email_id">Email ID</label>
+                                        <input id="business_email_id" name="business_email_id" type="email" class="form-control" placeholder="Ex: info@example.com" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="business_password">Password</label>
+                                        <input id="business_password" name="business_password" type="password" class="form-control" placeholder="Password" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="business_password_1" name="business_password_1" type="password" class="form-control" placeholder="Confirm Password" required>
                                     </div>
                                 </div>
                             </div>
@@ -161,71 +164,60 @@
                                 <div class="businessinfo-right-block">
                                     <!-- <div id="add_listing_map" class="add-listing-map"></div> -->
                                     <div class="form-group">
-                                        <label for="listing_address">Address</label>
+                                        <label for="address_line_1">Address</label>
                                         <table>
                                             <tr>
-                                                <td width=550><input id="business_address" type="text" class="form-control" placeholder="Line 1" aria-required="true"></td>
+                                                <td width=550><input id="address_line_1" name="address_line_1" type="text" class="form-control" placeholder="Line 1" required></td>
                                             </tr>
                                         </table>
                                     </div>
                                     <div class="form-group">
                                         <table>
                                             <tr>
-                                                <td width= 275><input id="street" type="text" class="form-control" placeholder="Street" aria-required="true" style="margin-bottom: 5px;"></td>
-                                                <td width= 275><input id="street" type="text" class="form-control" placeholder="City" aria-required="true" style="margin-bottom: 5px;"></td>
+                                                <td width= 275><input id="address_street" name="address_street" type="text" class="form-control" placeholder="Street" required style="margin-bottom: 5px;"></td>
+                                                <td width= 275><input id="address_city" name="address_city" type="text" class="form-control" placeholder="City" aria-required="true" style="margin-bottom: 5px;"></td>
                                             </tr>
                                             <tr>
-                                                <td><input id="state" type="text" class="form-control" placeholder="State" aria-required="true" style="margin-bottom: 5px;"></td>
-                                                <td><input id="zip" type="text" class="form-control" placeholder="Postal ZIP" aria-required="true" style="margin-bottom: 5px;"></td>
+                                                <td><input id="address_state" name="address_state" type="text" class="form-control" placeholder="State" required style="margin-bottom: 5px;"></td>
+                                                <td><input id="postal_zip" name="postal_zip" type="text" class="form-control" placeholder="Postal ZIP" required style="margin-bottom: 5px;"></td>
                                             </tr>
                                             <tr>
-                                                <td><input id="country" type="text" class="form-control" placeholder="Country" aria-required="true"></td>
+                                                <td><input id="country" name="country" type="text" class="form-control" placeholder="Country" required></td>
                                             </tr>
                                         </table>
                                     </div>
                                     <div class="form-group">
-                                        <label for="businss_category">Business Category</label>
+                                        <label for="business_category">Business Domain</label>
                                         <table>
                                             <tr>
                                                 <td width=275>
-                                                    <select id="business_category" style="width: 250px; height: 30px; border-radius: 3px; background-color: white !important;">
-                                                        <option value="none" selected disabled hidden>Select an Option</option>
-                                                        <option>Aerospace Industry</option>
-                                                        <option>Apparel and Garments</option>
-                                                        <option>Transport Industry</option>
-                                                        <option>Computer Industry</option>
-                                                        <option>Telecommunication industry</option>
-                                                        <option>Agriculture industry</option>
-                                                        <option>Construction Industry</option>
-                                                        <option>Education Industry</option>
-                                                        <option>Electronics Industry</option>
-                                                        <option>Food and Beverages</option>
-                                                        <option>Drugs and Pharmaceuticals</option>
-                                                        <option>Hospital and Diagnostics</option>
-                                                        <option>Entertainment Industry</option>
-                                                        <option>News Media Industry</option>
-                                                        <option>Energy Industry</option>
-                                                        <option>Manufacturing Industry</option>
-                                                        <option>Music Industry</option>
-                                                        <option>Mining Industry</option>
-                                                        <option>World Wide web</option>
-                                                      </select>
+                                                    <select id="business_category" name="business_category" style="width: 250px; height: 30px; border-radius: 3px; background-color: white !important;" required>
+                                                        <!-- <option value="none" selected disabled hidden>Select an Option</option> -->
+                                                    </select>
                                                 </td>
                                             </tr>
                                         </table>
                                     </div>
+                                    
+									<div class="form-group" style="width: 100%; height: 100%; margin-top: 2%;">
+										<div>
+											<label for="personal_profile_image">Company Logo</label>
+											<input type="file" class="form-control-file" id="personal_profile_image" name="personal_profile_image" required style="opacity: 1;">
+											<span>File Format .pdf or .doc</span>
+										</div>
+									</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- details-listing -->
-                    <div class="listing-block attach-document-listing">
+                    <div class="listing-block attach-document-listing" style="margin-bottom: 20px; padding: 40px; text-align:left;">
                         <h4>Attach Legal bsuiness Documents</h4>
                         <div class="form-group form-group-file-type">
                             <label for="pan_no">PAN Number</label>
                             <!-- <input type="file" class="form-control-file" id="pan_no"> -->
-                            <input id="pan_no" type="text" class="form-control-file" placeholder="Ex: XXXXXXXXXX" aria-required="true">
+                            <input id="pan_no" name="pan_no" type="text" class="form-control-file" placeholder="Ex: XXXXXXXXXX" required>
                             <!-- <span>File Format .pdf, .doc, .docx, .ppt, .pptx, .jpeg, .png</span> -->
                         </div>
                         <div class="form-group form-group-file-type">
@@ -233,17 +225,42 @@
                             <input type="file" class="form-control-file" id="gst_no">
                             <span>File Format .pdf, .doc, .docx, .ppt, .pptx, .jpeg, .png</span> -->
                             <label for="gst_no">GST Number</label>
-                            <input id="gst_no" type="text" class="form-control-file" placeholder="Ex: XXXXXXXXXXXXXXX" aria-required="true">
+                            <input id="gst_no" name="gst_no" type="text" class="form-control-file" placeholder="Ex: XXXXXXXXXXXXXXX" required>
                         </div>
                         <div class="form-group form-group-file-type">
-                            <label for="bank_account_statement">Bank Account Statement</label>
-                            <input type="file" class="form-control-file" id="bank_account_statement">
-                            <span>File Format .pdf, .doc, .docx, .ppt, .pptx, .jpeg, .png</span>
+                            <label for="bank_details">Bank Account Statement</label>
+                            <input type="file" class="form-control-file" id="bank_details" name="bank_details" required>
+                            <span>File Format .pdf or .doc</span>
                         </div>
+                        <div class="form-group row form-check-row">
+                            <div class="col-lg-12">
+                                <div class="form-check">
+                                    <label class="custom-control custom-checkbox condition-text">
+                                        <input type="checkbox" class="custom-control-input" name="accept">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">I accept <a href="#" style="color: blue" required>Terms and Conditions</a></span>
+                                    </label>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                        <span>
+                            <?php 
+                                if (isset($_GET['x'])) {
+                                    $result = $_GET['x'];
+                                    echo $result;
+                                }
+                            ?>
+                        </span>
                     </div>
+                    <button type="submit" class="danger-btn" id="submit_button" name="submit_button" style="margin-top: 3%; width: 200px; height: 40px; background-color: #3867D6; color: #fff; border-radius: 4px; border:0;">
+						<i class="fa fa-plus" aria-hidden="true"></i>
+						Add
+					</button>
                 </form>
             </div>
         </div>
+    </div>
         <footer>
             <div class="footer-top-block">
                 <div class="container">
@@ -296,7 +313,7 @@
                                 <ul class="footer-content-list">
                                     <li>
                                         <a href="about.php">
-											About ListingGEO
+											About B2B Marketplace
 										</a>
                                     </li>
                                     <li>
@@ -304,16 +321,6 @@
 											How it Works
 										</a>
                                     </li>
-                                    <!-- <li>
-                                        <a href="javascript:void(0)">
-											Exclusive Listings
-										</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-											Popular Locations
-										</a>
-                                    </li> -->
                                     <li>
                                         <a href="contact.php">
 											Contact us
@@ -327,28 +334,18 @@
                                 <h4 class="footer-widget-title">Listing Account</h4>
                                 <ul class="footer-content-list">
                                     <li>
-                                        <a href="login.php">
-											User Log in
-										</a>
-                                    </li>
-                                    <li>
-                                        <a href="signup.php">
-											User Registration
+                                        <a href="business-login.php">
+											Business Log in
 										</a>
                                     </li>
                                     <li>
                                         <a href="add-listing.php">
-											Add Listing
+											Business Registration
 										</a>
                                     </li>
                                     <!-- <li>
-                                        <a href="javascript:void(0)">
-											Favorite Lisitings
-										</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-											Pricing Plans
+                                        <a href="add-listing.php">
+											Add Listing
 										</a>
                                     </li> -->
                                 </ul>
@@ -357,50 +354,55 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="footer-widget">
                                 <h4 class="footer-widget-title">Latest Listings</h4>
+                                <?php
+
+                                    $query_popular_category_1 = "SELECT business_id, AVG(ratings) FROM review_details GROUP BY business_id ORDER BY AVG(ratings) DESC LIMIT 2";
+                                    $result_popular_category_1 = mysqli_query($conn, $query_popular_category_1);
+                                    
+                                    while($row_popular_category_1 = mysqli_fetch_assoc($result_popular_category_1)){
+                                        $business_id_1 = $row_popular_category_1['business_id'];
+
+                                        $query_business_details = "SELECT * FROM business_details, category_table 
+                                                    WHERE business_details.business_category = category_table.category_id 
+                                                    AND business_details.business_id = '$business_id_1' ";
+
+                                        $result_business_details = mysqli_query($conn, $query_business_details);
+
+                                        $row_business_details = mysqli_fetch_assoc($result_business_details);
+
+                                        $category_business = $row_business_details['category_name'];
+                                        $category_business = ucwords($category_business);
+
+                                ?>
                                 <article class="latest-post">
                                     <div class="post-thumb">
-                                        <a href="javascript:void(0)">
-                                            <img src="images/post/7.jpg" alt="img" class="img-responsive">
+                                        <a href="javascript:void(0)" style="cursor: none;">
+                                            <img src="<?php echo $row_business_details['personal_profile_image'] ?>" alt="img" class="img-responsive">
                                         </a>
                                     </div>
                                     <div class="post-wrapper">
                                         <h6 class="title">
-                                            <a href="javascript:void(0)">
-												Grand Park Hotel
-											</a>
+                                            <a href="javascript:void(0)"  style="cursor: none;">
+                                                <?php echo $row_business_details['legal_name'] ?>
+                                            </a>
                                         </h6>
                                         <p class="post-entry">
-                                            175 Church Road, City Tower, California, CA785423
+                                            <?php echo $category_business ?>
                                         </p>
                                         <div class="post-meta">
-                                            <a href="javascript:void(0)" class="post-tag">
-												Hotel & Resort
-											</a>
+                                        <form action="./single-listing.php" method="POST">
+                                            <input type="hidden" name= "product_seller_name" value="<?php echo $row_business_details['legal_name'] ?>">
+                                            <button type="submit" id="business_button" style="background: transparent; border:none;">                                            
+                                                <a class="post-tag" style="cursor: pointer;">
+                                                    View Seller
+                                                </a>
+                                            </button>
+                                        </form>
                                         </div>
                                     </div>
                                 </article>
-                                <article class="latest-post">
-                                    <div class="post-thumb">
-                                        <a href="javascript:void(0)">
-                                            <img src="images/post/7.jpg" alt="img" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="post-wrapper">
-                                        <h6 class="title">
-                                            <a href="javascript:void(0)">
-											Grand Park Hotel
-										</a>
-                                        </h6>
-                                        <p class="post-entry">
-                                            175 Church Road, City Tower, California, CA785423
-                                        </p>
-                                        <div class="post-meta">
-                                            <a href="javascript:void(0)" class="post-tag">
-												Hotel & Resort
-											</a>
-                                        </div>
-                                    </div>
-                                </article>
+                                    <?php } ?>
+
                             </div>
                         </div>
                     </div>
@@ -436,7 +438,13 @@
             </div>
         </footer>
     </div>
-   <script src="assets/js/jquery-3.2.1.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#business_category").load('./php_form/load_category.php')
+        });
+    </script>
+    <!-- <script src="assets/js/jquery-3.2.1.min.js"></script> -->
     <script src="assets/js/tether.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.bxslider.js"></script>
@@ -453,7 +461,7 @@
     <script src="assets/js/tinymce/tinymce.min.js"></script>
 
     <!-- Google-map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI"></script>
     <script src="assets/js/gmap3.min.js"></script>
 
     <script src="js/custom.js"></script>
@@ -487,7 +495,7 @@
                 },
             }
         });
-    </script>
+    </script> -->
 </body>
 
 <!-- Mirrored from themerail.com/html/listingGeo/add-listing.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 May 2020 13:44:09 GMT -->
